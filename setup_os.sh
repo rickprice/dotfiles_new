@@ -8,6 +8,8 @@ sudo pacman --noconfirm -Syu
 # Install Main packages I want
 sudo pacman --noconfirm -S yay
 sudo pacman --noconfirm -S stow
+sudo pacman --noconfirm -S python
+sudo pacman --noconfirm -S figlet
 
 # Update everything in the AUR
 yay --noconfirm -Syu
@@ -16,9 +18,10 @@ yay --noconfirm -Syu
 yay --noconfirm -S neovim-nightly-bin
 yay --noconfirm -S google-chrome
 
-if [ ! -f /.ssh/id_rsa.pub ]; then
-    echo "File not found!"
-fi
+# if [ ! -f /.ssh/id_rsa.pub ]; then
+#     figlet "Have to create new SSH keys"
+#     echo "File not found!"
+# fi
 
 # # Install PPA tools
 # sudo apt-get --assume-yes update && sudo apt-get -yqq upgrade && \
