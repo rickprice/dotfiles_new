@@ -14,6 +14,7 @@ yay --noconfirm -Syu
 
 # Install AUR packages I want
 yay --noconfirm -S neovim-nightly-bin
+yay --noconfirm -S google-chrome
 
 # # Install PPA tools
 # sudo apt-get --assume-yes update && sudo apt-get -yqq upgrade && \
@@ -35,7 +36,7 @@ yay --noconfirm -S neovim-nightly-bin
 # sudo apt-get --assume-yes update && sudo apt-get -yqq upgrade && \
 #         sudo apt-get --assume-yes install \
 #     ripgrep \
-#     stow \
+##     stow \
 #     universal-ctags \
 #     golang \
 #     locales \
