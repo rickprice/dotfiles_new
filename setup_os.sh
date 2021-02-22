@@ -2,13 +2,17 @@
 
 # Setup Packages for Arch
 
-## Upgrade database
+## Upgrade everything
 sudo pacman --noconfirm -Syu
 
-## Install Stow
+# Install Main packages I want
 sudo pacman --noconfirm -S yay
 sudo pacman --noconfirm -S stow
 
+# Update everything in the AUR
+yay --noconfirm -Syu
+
+# Install AUR packages I want
 yay --noconfirm -S neovim-nightly-bin
 
 # # Install PPA tools
