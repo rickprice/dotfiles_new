@@ -16,6 +16,10 @@ yay --noconfirm -Syu
 yay --noconfirm -S neovim-nightly-bin
 yay --noconfirm -S google-chrome
 
+if [ ! -f /.ssh/id_rsa.pub ]; then
+    echo "File not found!"
+fi
+
 # # Install PPA tools
 # sudo apt-get --assume-yes update && sudo apt-get -yqq upgrade && \
 #         sudo apt-get --assume-yes install \
