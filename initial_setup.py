@@ -60,8 +60,8 @@ def main() -> None:
     dot_ssh_directory = Path(os.path.join(home_directory, ".ssh"))
     checkForDirectory(dot_ssh_directory, printSSHCreationMessage, 2)
 
-    dot_ssh_pub_file = Path(os.path.join(home_directory, ".ssh", "id_rsa.pub"))
-    print("... Checking for id_rsa.pub file")
+    dot_ssh_pub_file = Path(os.path.join(home_directory, ".ssh", "id_ed25519.pub"))
+    print("... Checking for id_ed25519.pub file")
     checkForFile(dot_ssh_pub_file, printSSHCreationMessage, 3)
 
     print("Seems all the inital checks passed")
@@ -124,33 +124,33 @@ def main() -> None:
     print()
 
     print("Check that required software is installed")
-    check_for_software("curl", "7.68.0", r"^curl (\S*).*", deal_with_software_apt)
+    # check_for_software("curl", "7.68.0", r"^curl (\S*).*", deal_with_software_apt)
 
-    check_for_software("git", "2.24.3", r"^git version (\S*)", deal_with_software_apt)
-    check_for_software("git-lfs", "2.9.2", r"^git-lfs/(\S*)", deal_with_software_apt)
-    check_for_software("pipenv", "11.9.0", r"^pipenv, version (\S*)", deal_with_software_apt)
-    check_for_software("java", "11.0.0", r"openjdk (\S*)", deal_with_software_apt)
+    # check_for_software("git", "2.24.3", r"^git version (\S*)", deal_with_software_apt)
+    # check_for_software("git-lfs", "2.9.2", r"^git-lfs/(\S*)", deal_with_software_apt)
+    # check_for_software("pipenv", "11.9.0", r"^pipenv, version (\S*)", deal_with_software_apt)
+    # check_for_software("java", "11.0.0", r"openjdk (\S*)", deal_with_software_apt)
 
-    check_for_software("stow", "2.3.1", r"^stow.*version (\S*)", deal_with_software_state_tool)
-    print("Seems that required software is installed")
-    print()
+    # check_for_software("stow", "2.3.1", r"^stow.*version (\S*)", deal_with_software_state_tool)
+    # print("Seems that required software is installed")
+    # print()
 
-    check_for_software("state", "0.13.31", r"^Version (\S*)", deal_with_software_state_tool)
-    print("Seems that required software is installed")
-    print()
+    # check_for_software("state", "0.13.31", r"^Version (\S*)", deal_with_software_state_tool)
+    # print("Seems that required software is installed")
+    # print()
 
-    print("Ensuring code checked out")
-    ensure_repository_checked_out(
-        Path(os.path.join(home_directory, "camel")), "git@github.com:ActiveState/camel.git"
-    )
-    ensure_repository_checked_out(
-        Path(os.path.join(home_directory, "TheHomeRepot")),
-        "git@github.com:ActiveState/TheHomeRepot.git",
-    )
-    ensure_repository_checked_out(
-        Path(os.path.join(home_directory, "langtools")), "git@github.com:ActiveState/langtools.git"
-    )
-    print("Code is now checked out")
+    # print("Ensuring code checked out")
+    # ensure_repository_checked_out(
+    #     Path(os.path.join(home_directory, "camel")), "git@github.com:ActiveState/camel.git"
+    # )
+    # ensure_repository_checked_out(
+    #     Path(os.path.join(home_directory, "TheHomeRepot")),
+    #     "git@github.com:ActiveState/TheHomeRepot.git",
+    # )
+    # ensure_repository_checked_out(
+    #     Path(os.path.join(home_directory, "langtools")), "git@github.com:ActiveState/langtools.git"
+    # )
+    # print("Code is now checked out")
 
 
 def printSSHCreationMessage(dot_ssh_directory: Path) -> None:
