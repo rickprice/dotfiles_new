@@ -7,6 +7,7 @@ sudo pacman --noconfirm -Syu
 
 ## Install Main packages I want
 sudo pacman --noconfirm -S yay
+sudo pacman --noconfirm -S base-devel
 sudo pacman --noconfirm -S stow
 sudo pacman --noconfirm -S python
 sudo pacman --noconfirm -S python-pip
@@ -27,6 +28,11 @@ sudo pip install PyYAML
 sudo pip install neovim
 sudo pacman --noconfirm -S nodejs
 sudo pacman --noconfirm -S npm
+sudo pacman --noconfirm -S ruby
+gem install neovim
+sudo pacman --noconfirm -S perl
+sudo yay --noconfirm -S cpanminus
+sudo cpanm Neovim::Ext
 
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
