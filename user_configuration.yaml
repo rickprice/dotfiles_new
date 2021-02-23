@@ -1,0 +1,32 @@
+aws:
+  region: us-east-1
+  aws_access_key_id: the access key id
+  aws_secret_access_key: the secret access key
+user:
+  username: your username
+  email: your ActiveState email
+  fullname: First Last
+  shell: /bin/zsh
+  editor: vim
+pivotal:
+  token: ReplaceThisWithPivotalToken in your pivotal profile, don't put it into git, its a secret value
+  user: Pivotal User ID
+  project_id: Pivotal project id
+hub:
+  oauth_token: oauth_token
+  user: rickprice
+activestate_slack:
+  notify_user: rickp - your_slack_username
+activestate:
+  user: rickp - Your user for the ActiveState platform
+  code_signing_password: Windows Code Signing Password
+  code_signing_cert: "Windows code signing cert (quoted/multi-line)"
+git_repositories:
+  camel:
+    url: thisisagiturl
+    location: wheretoputit
+    lfs: false
+  theHomeRepot:
+    url: thisisagiturl
+    location: wheretoputit
+    lfs: false
