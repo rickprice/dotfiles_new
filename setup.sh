@@ -8,7 +8,7 @@ stow --dotfiles zshrc
 stow --dotfiles vim
 stow --dotfiles config
 # stow --dotfiles local
-# stow --dotfiles tmux
+stow --dotfiles tmux
 # stow --dotfiles mutt
 
 # sudo update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60

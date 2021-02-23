@@ -13,6 +13,7 @@ sudo pacman --noconfirm -S python
 sudo pacman --noconfirm -S python-pip
 sudo pacman --noconfirm -S figlet
 sudo pacman --noconfirm -S fd
+sudo pacman --noconfirm -S tmux
 
 ## Update everything in the AUR
 yay --noconfirm -Syu
