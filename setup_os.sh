@@ -52,10 +52,11 @@ chsh -s $(which zsh)
 
 
 ## Needed for Brother MFC-L2700DW
+PRINTER_IP="192.168.0.194"
 yay --noconfirm -S brother-mfc-l2710dw
 yay --noconfirm -S brscan4
 sudo pacman --noconfirm -S simple-scan
-sudo brsaneconfig4 -a name=BROTHER model=MFC-L2700DW ip=192.168.0.194
+sudo brsaneconfig4 -a name=BROTHER model=MFC-L2700DW ip="$PRINTER_IP"
 # Seems you can also do this:
 # brsaneconfig4 -a name=BROTHER model=MFC-L2700DW nodename=BRWD85DE244E1EB
 
@@ -63,7 +64,7 @@ sudo pacman --noconfirm -S cups manjaro-printer
 sudo systemctl enable cups.service
 sudo systemctl start cups.service
 sudo pacman --noconfirm -S cups system-config-printer
-lpadmin -p MFC-L2700DW -E -v ipp://192.168.0.194/ipp/print -m everywhere
+lpadmin -p MFC-L2700DW -E -v "ipp://$PRINTER_IP/ipp/print" -m everywhere
 
 #########################################################################################################3
 # if [ ! -f /.ssh/id_rsa.pub ]; then
