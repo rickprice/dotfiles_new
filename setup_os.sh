@@ -56,6 +56,13 @@ yay --noconfirm -S brother-mfc-l2710dw
 yay --noconfirm -S brscan4
 sudo pacman --noconfirm -S simple-scan
 sudo brsaneconfig4 -a name=BROTHER model=MFC-L2700DW ip=192.168.0.194
+# Seems you can also do this:
+# brsaneconfig4 -a name=BROTHER model=MFC-L2700DW nodename=BRWD85DE244E1EB
+
+sudo pacman --noconfirm -S cups manjaro-printer
+sudo systemctl enable cups.service
+sudo systemctl start cups.service
+sudo pacman --noconfirm -S cups system-config-printer
 
 #########################################################################################################3
 # if [ ! -f /.ssh/id_rsa.pub ]; then
