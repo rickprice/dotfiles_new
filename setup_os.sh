@@ -32,7 +32,7 @@ sudo npm install -g neovim
 sudo pacman --noconfirm -S ruby
 gem install neovim
 sudo pacman --noconfirm -S perl
-sudo yay --noconfirm -S cpanminus
+yay --noconfirm -S cpanminus
 sudo cpanm Neovim::Ext
 cpanm --local-lib=~/perl5 local::lib && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
 
@@ -50,6 +50,12 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 
 chsh -s $(which zsh)
 
+
+## Needed for Brother MFC-L2700DW
+yay --noconfirm -S brother-mfc-l2710dw
+yay --noconfirm -S brscan4
+sudo pacman --noconfirm -S simple-scan
+sudo brsaneconfig4 -a name=BROTHER model=MFC-L2700DW ip=192.168.0.194
 
 #########################################################################################################3
 # if [ ! -f /.ssh/id_rsa.pub ]; then
