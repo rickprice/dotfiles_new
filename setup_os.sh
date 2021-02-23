@@ -63,6 +63,7 @@ sudo pacman --noconfirm -S cups manjaro-printer
 sudo systemctl enable cups.service
 sudo systemctl start cups.service
 sudo pacman --noconfirm -S cups system-config-printer
+lpadmin -p MFC-L2700DW -E -v ipp://192.168.0.194/ipp/print -m everywhere
 
 #########################################################################################################3
 # if [ ! -f /.ssh/id_rsa.pub ]; then
