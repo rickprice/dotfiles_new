@@ -3,7 +3,7 @@
 ### Setup dotfiles directories ###
 
 mkdir -p ~/.cache/nvim/undo
-# stow --dotfiles zshrc
+stow --dotfiles zshrc
 # stow --dotfiles bash
 stow --dotfiles vim
 stow --dotfiles config
