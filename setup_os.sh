@@ -9,6 +9,7 @@ sudo pacman --noconfirm -Syu
 sudo pacman --noconfirm -S yay
 sudo pacman --noconfirm -S stow
 sudo pacman --noconfirm -S python
+sudo pacman --noconfirm -S pip
 sudo pacman --noconfirm -S figlet
 
 # Update everything in the AUR
