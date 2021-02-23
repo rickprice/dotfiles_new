@@ -23,6 +23,11 @@ yay --noconfirm -S google-chrome
 ## Required for initial_setup.py
 sudo pip install PyYAML
 
+## Required for Neovim
+sudo pip install neovim
+sudo pacman --noconfirm -S nodejs
+sudo pacman --noconfirm -S npm
+
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
