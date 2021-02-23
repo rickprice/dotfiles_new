@@ -70,6 +70,7 @@ sudo pacman --noconfirm -S cups system-config-printer
 lpadmin -p MFC-L2700DW -E -v "ipp://$PRINTER_IP/ipp/print" -m everywhere
 
 ## X11 stuff
+sudo pacman --noconfirm -S xcape
 sudo ln -s ./X11_stuff/xinitrc.d/60-Alter_CapsLock.sh /etc/X11/xinit/xinitrc.d/60-Alter_Capslock.sh
 
 #########################################################################################################3
