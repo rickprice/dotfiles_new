@@ -5,19 +5,22 @@
 ## Upgrade everything
 sudo pacman --noconfirm -Syu
 
-# Install Main packages I want
+## Install Main packages I want
 sudo pacman --noconfirm -S yay
 sudo pacman --noconfirm -S stow
 sudo pacman --noconfirm -S python
-sudo pacman --noconfirm -S pip
+sudo pacman --noconfirm -S python-pip
 sudo pacman --noconfirm -S figlet
 
-# Update everything in the AUR
+## Update everything in the AUR
 yay --noconfirm -Syu
 
-# Install AUR packages I want
+## Install AUR packages I want
 yay --noconfirm -S neovim-nightly-bin
 yay --noconfirm -S google-chrome
+
+## Required for initial_setup.py
+sudo pip install PyYAML
 
 # if [ ! -f /.ssh/id_rsa.pub ]; then
 #     figlet "Have to create new SSH keys"
