@@ -27,6 +27,7 @@ sudo pip install PyYAML
 sudo pip install neovim
 sudo pacman --noconfirm -S nodejs
 sudo pacman --noconfirm -S npm
+sudo npm install -g neovim
 
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
