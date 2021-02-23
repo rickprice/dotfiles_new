@@ -11,6 +11,7 @@ sudo pacman --noconfirm -S stow
 sudo pacman --noconfirm -S python
 sudo pacman --noconfirm -S python-pip
 sudo pacman --noconfirm -S figlet
+sudo pacman --noconfirm -S fd
 
 ## Update everything in the AUR
 yay --noconfirm -Syu
@@ -22,6 +23,22 @@ yay --noconfirm -S google-chrome
 ## Required for initial_setup.py
 sudo pip install PyYAML
 
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+git clone https://github.com/agkozak/zsh-z $ZSH_CUSTOM/plugins/zsh-z
+
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+
+~/.fzf/install
+
+chsh -s $(which zsh)
+
+
+#########################################################################################################3
 # if [ ! -f /.ssh/id_rsa.pub ]; then
 #     figlet "Have to create new SSH keys"
 #     echo "File not found!"
