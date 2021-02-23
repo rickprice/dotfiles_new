@@ -34,6 +34,7 @@ gem install neovim
 sudo pacman --noconfirm -S perl
 sudo yay --noconfirm -S cpanminus
 sudo cpanm Neovim::Ext
+cpanm --local-lib=~/perl5 local::lib && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
 
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
