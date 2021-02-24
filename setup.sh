@@ -5,7 +5,7 @@
 mkdir -p ~/.cache/nvim/undo
 # Configure for ZSH
 rm ~/.zshrc
-rm ~/.p10k.zshrc
+rm ~/.p10k.zsh
 rm ~/.zshenv
 stow --dotfiles zshrc
 
