@@ -21,6 +21,8 @@ yay --noconfirm -Syu
 ## Install AUR packages I want
 yay --noconfirm -S neovim-nightly-bin
 yay --noconfirm -S google-chrome
+yay --noconfirm -S discord
+yay --noconfirm -S slack-desktop
 
 ## Required for initial_setup.py
 sudo pip install PyYAML
@@ -51,7 +53,6 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 
 chsh -s $(which zsh)
 
-
 ## Needed for Brother MFC-L2700DW
 PRINTER_IP="192.168.0.194"
 ### Setup Brother scanner
@@ -71,6 +72,13 @@ lpadmin -p MFC-L2700DW -E -v "ipp://$PRINTER_IP/ipp/print" -m everywhere
 
 ## X11 stuff
 sudo ln -s ./X11_stuff/xinitrc.d/60-Alter_CapsLock.sh /etc/X11/xinit/xinitrc.d/60-Alter_Capslock.sh
+
+## Setup ZSH for humans
+if command -v curl >/dev/null 2>&1; then
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/romkatv/zsh4humans/v4/install)"
+else
+  sh -c "$(wget -O- https://raw.githubusercontent.com/romkatv/zsh4humans/v4/install)"
+fi
 
 #########################################################################################################3
 # if [ ! -f /.ssh/id_rsa.pub ]; then
