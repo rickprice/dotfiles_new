@@ -47,14 +47,6 @@ cpanm --local-lib=~/perl5 local::lib && eval $(perl -I ~/perl5/lib/perl5/ -Mloca
 #   sh -c "$(wget -O- https://raw.githubusercontent.com/romkatv/zsh4humans/v4/install)"
 # fi
 
-# Using ZSH for humans for the moment instead of this
-# sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-# git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-# git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-# git clone https://github.com/agkozak/zsh-z $ZSH_CUSTOM/plugins/zsh-z
-# git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-# ~/.fzf/install
-
 chsh -s $(which zsh)
 
 ## Needed for Brother MFC-L2700DW
@@ -77,6 +69,13 @@ lpadmin -p MFC-L2700DW -E -v "ipp://$PRINTER_IP/ipp/print" -m everywhere
 ## X11 stuff
 sudo pacman --noconfirm -S xcape
 sudo ln -s ./X11_stuff/xinitrc.d/60-Alter_CapsLock.sh /etc/X11/xinit/xinitrc.d/60-Alter_Capslock.sh
+
+## Docker
+yay --noconfirm -S docker
+sudo groupadd docker
+sudo usermod -aG docker $USER
+sudo systemctl enable docker.service
+sudo systemctl start docker.service
 
 #########################################################################################################3
 # if [ ! -f /.ssh/id_rsa.pub ]; then
