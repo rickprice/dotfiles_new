@@ -77,6 +77,14 @@ sudo usermod -aG docker $USER
 sudo systemctl enable docker.service
 sudo systemctl start docker.service
 
+## Rust
+sudo pacman --noconfirm -S rustup
+rustup toolchain install stable
+rustup default stable
+rustup component add rustfmt
+rustup component add rls
+
+
 #########################################################################################################3
 # if [ ! -f /.ssh/id_rsa.pub ]; then
 #     figlet "Have to create new SSH keys"
