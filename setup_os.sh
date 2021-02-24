@@ -88,6 +88,9 @@ rustup component add rls
 yay --noconfirm -S alarcitty
 yay --noconfirm -S ttf-iosevka
 
+## Keypass
+yay --noconfirm -S KeePassXC
+
 #########################################################################################################3
 # if [ ! -f /.ssh/id_rsa.pub ]; then
 #     figlet "Have to create new SSH keys"
