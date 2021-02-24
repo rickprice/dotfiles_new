@@ -84,6 +84,9 @@ rustup default stable
 rustup component add rustfmt
 rustup component add rls
 
+## Alarcitty
+yay --noconfirm -S alarcitty
+yay --noconfirm -S ttf-iosevka
 
 #########################################################################################################3
 # if [ ! -f /.ssh/id_rsa.pub ]; then
