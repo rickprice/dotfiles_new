@@ -15,6 +15,7 @@ stow --dotfiles config
 # stow --dotfiles local
 stow --dotfiles tmux
 # stow --dotfiles mutt
+stow --dotfiles i3
 
 # sudo update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
 # sudo update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
