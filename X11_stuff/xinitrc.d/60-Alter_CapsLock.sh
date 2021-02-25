@@ -2,4 +2,4 @@
 # setxkbmap -option 'caps:ctrl_modifier';xcape -e 'Caps_Lock=Escape'&
 # setxkbmap -model thinkpad -layout us -variant dvorak -option caps:ctrl_nocaps;xcape -e 'Caps_Lock=Escape'&
 setxkbmap -model thinkpad -layout us -variant dvorak -option 'ctrl:nocaps'
-xcape -e 'Caps_Lock=Escape'
+xcape -e 'Control_L=Escape'
