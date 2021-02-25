@@ -91,6 +91,9 @@ yay --noconfirm -S ttf-iosevka
 ## Keypass
 yay --noconfirm -S keepassxc
 
+## feh
+sudo pacman --noconfirm -S feh
+
 #########################################################################################################3
 # if [ ! -f /.ssh/id_rsa.pub ]; then
 #     figlet "Have to create new SSH keys"
