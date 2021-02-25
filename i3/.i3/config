@@ -418,3 +418,5 @@ mode "$mode_gaps_outer" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+
+exec --no-startup-id feh --no-fehbg --bg-fill ~/.dotfiles/wallpaper/wp3842657-lenovo-logo-wallpapers.jpg
