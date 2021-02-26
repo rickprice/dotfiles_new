@@ -290,6 +290,7 @@ exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
 # Change keyboard layout subtly and change background image
+exec --no-startup-id nitrogen --set-scaled ~/.dotfiles/wallpaper/wp3842657-lenovo-logo-wallpapers.jpg
 exec --no-startup-id setxkbmap -model thinkpad -layout us -variant dvorak -option 'ctrl:nocaps'
 # exec --no-startup-id setxkbmap -option 'ctrl:nocaps'
 exec --no-startup-id xcape -e 'Control_L=Escape'
