@@ -100,7 +100,7 @@ yay --noconfirm -S ttf-iosevka
 yay --noconfirm -S keepassxc
 
 ## Wallpaper
-nitrogen --set-auto ./wallpaper/wp3842657-lenovo-logo-wallpapers.jpg
+nitrogen --set-scaled ./wallpaper/wp3842657-lenovo-logo-wallpapers.jpg
 
 #########################################################################################################3
 # if [ ! -f /.ssh/id_rsa.pub ]; then
