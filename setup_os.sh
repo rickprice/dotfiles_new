@@ -14,6 +14,8 @@ sudo pacman --noconfirm -S python-pip
 sudo pacman --noconfirm -S figlet
 sudo pacman --noconfirm -S fd
 sudo pacman --noconfirm -S tmux
+sudo pacman --noconfirm -S zip
+sudo pacman --noconfirm -S unzip
 
 ## Update everything in the AUR
 yay --noconfirm -Syu
@@ -23,6 +25,8 @@ yay --noconfirm -S neovim-nightly-bin
 yay --noconfirm -S google-chrome
 yay --noconfirm -S discord
 yay --noconfirm -S slack-desktop
+yay --noconfirm -S poppler
+yay --noconfirm -S pdfjam
 
 ## Required for initial_setup.py
 sudo pip install PyYAML
@@ -38,6 +42,8 @@ sudo pacman --noconfirm -S perl
 yay --noconfirm -S cpanminus
 sudo cpanm Neovim::Ext
 cpanm --local-lib=~/perl5 local::lib && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
+# Can't use noconfirm with this because it defaults to N to delete vi and Vim
+# yay --noconfirm -S neovim-symlinks
 
 ## Setup ZSH for humans
 # ZSH for Humans already setup, so reuse config
