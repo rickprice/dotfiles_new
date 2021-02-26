@@ -27,6 +27,7 @@ yay --noconfirm -S discord
 yay --noconfirm -S slack-desktop
 yay --noconfirm -S poppler
 yay --noconfirm -S pdfjam
+yay --noconfirm -S glogg
 
 ## Required for initial_setup.py
 sudo pip install PyYAML
