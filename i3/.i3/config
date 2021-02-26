@@ -289,6 +289,12 @@ exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
+# Change keyboard layout subtly and change background image
+exec --no-startup-id setxkbmap -model thinkpad -layout us -variant dvorak -option 'ctrl:nocaps'
+exec --no-startup-id xcape -e 'Control_L=Escape'
+exec --no-startup-id feh --no-fehbg --bg-fill ~/.dotfiles/wallpaper/wp3842657-lenovo-logo-wallpapers.jpg
+
+
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
 # https://i3wm.org/docs/userguide.html#xresources
