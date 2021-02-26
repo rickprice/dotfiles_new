@@ -99,8 +99,8 @@ yay --noconfirm -S ttf-iosevka
 ## Keypass
 yay --noconfirm -S keepassxc
 
-## feh
-sudo pacman --noconfirm -S feh
+## Wallpaper
+nitrogen --set-auto ./wallpaper/wp3842657-lenovo-logo-wallpapers.jpg
 
 #########################################################################################################3
 # if [ ! -f /.ssh/id_rsa.pub ]; then
