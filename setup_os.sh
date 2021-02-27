@@ -97,8 +97,8 @@ rustup default stable
 rustup component add rustfmt
 rustup component add rls
 
-## Alarcitty
-yay --noconfirm -S alarcitty
+## Alacritty
+yay --noconfirm -S alacritty
 yay --noconfirm -S ttf-iosevka
 
 ## Keypass
