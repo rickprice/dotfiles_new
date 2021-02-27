@@ -1,5 +1,8 @@
 #! /bin/sh
 
+# Fail script if any command fails
+set -e
+
 ### Setup dotfiles directories ###
 
 mkdir -p ~/.cache/nvim/undo

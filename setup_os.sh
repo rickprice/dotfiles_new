@@ -1,5 +1,8 @@
 #! /bin/bash
 
+# Fail script if any command fails
+set -e
+
 # Setup Packages for Arch
 
 ## Upgrade everything
