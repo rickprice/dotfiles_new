@@ -7,6 +7,7 @@ mkdir -p ~/.cache/nvim/undo
 rm ~/.zshrc
 rm ~/.p10k.zsh
 rm ~/.zshenv
+rm ~/.profile
 stow --dotfiles zshrc
 
 # stow --dotfiles bash

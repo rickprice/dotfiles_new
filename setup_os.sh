@@ -83,6 +83,10 @@ sudo usermod -aG docker $USER
 sudo systemctl enable docker.service
 sudo systemctl start docker.service
 
+# VirtualBox
+# Not configured yet, but this is a link that seems good:
+# https://www.linuxtechi.com/install-virtualbox-on-arch-linux/
+
 ## Rust
 sudo pacman --noconfirm -S rustup
 rustup toolchain install stable
