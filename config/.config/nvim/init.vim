@@ -5,14 +5,6 @@ filetype off                  " required
 " Set leader key
 let mapleader = "\<Space>"
 
-" Determine if this is a host with enough oomph to run advanced things (IE not
-" a phone)
-let g:advanced_hosts = ["fpersonal","fwork"]
-let g:is_advanced_host = 0
-if index(g:advanced_hosts, hostname()) >= 0
-    let g:is_advanced_host = 1
-endif
-
 " Determine various things about our environment
 let g:is_nvim = has('nvim')
 let g:is_nvim5 = has('nvim-0.5.0')
@@ -188,26 +180,24 @@ endif
 Plug 'lambdalisue/fern-mapping-git.vim'
 Plug 'lambdalisue/fern-git-status.vim'
 
-if g:is_advanced_host && g:is_nvim && g:has_rust_cargo
-    " Todoist and Clap
-    Plug 'romgrk/todoist.nvim', { 'do': ':TodoistInstall' }
+" Todoist and Clap
+Plug 'romgrk/todoist.nvim', { 'do': ':TodoistInstall' }
 
-    let g:todoist = {
-    \ 'icons': {
-    \   'unchecked': ' [ ] ',
-    \   'checked':   ' [X] ',
-    \   'loading':   '  ',
-    \   'error':     '  ',
-    \ },
-    \  'defaultProject': 'WorkVimTodos',
-    \  'useMarkdownSyntax': v:true,
-    \}
+let g:todoist = {
+\ 'icons': {
+\   'unchecked': ' [ ] ',
+\   'checked':   ' [X] ',
+\   'loading':   '  ',
+\   'error':     '  ',
+\ },
+\  'defaultProject': 'WorkVimTodos',
+\  'useMarkdownSyntax': v:true,
+\}
 
-    let clap_provider_todoist = {
-    \ 'source': {-> Todoist__listProjects()},
-    \ 'sink': 'Todoist',
-    \}
-endif
+let clap_provider_todoist = {
+\ 'source': {-> Todoist__listProjects()},
+\ 'sink': 'Todoist',
+\}
 
 " The bang version will try to download the prebuilt binary if cargo does not exist.
 Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
