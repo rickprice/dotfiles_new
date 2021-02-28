@@ -86,7 +86,7 @@ sudo pacman --noconfirm -S xcape
 
 ## Docker
 yay --noconfirm -S docker
-sudo groupadd docker
+sudo groupadd --force docker  # Force to avoid errors when group exists already
 sudo usermod -aG docker $USER
 sudo systemctl enable docker.service
 sudo systemctl start docker.service
