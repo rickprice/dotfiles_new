@@ -180,24 +180,26 @@ endif
 Plug 'lambdalisue/fern-mapping-git.vim'
 Plug 'lambdalisue/fern-git-status.vim'
 
-" Todoist and Clap
-Plug 'romgrk/todoist.nvim', { 'do': ':TodoistInstall' }
+if g:is_nvim && g:has_rust_cargo
+    " Todoist
+    Plug 'romgrk/todoist.nvim', { 'do': ':TodoistInstall' }
 
-let g:todoist = {
-\ 'icons': {
-\   'unchecked': ' [ ] ',
-\   'checked':   ' [X] ',
-\   'loading':   '  ',
-\   'error':     '  ',
-\ },
-\  'defaultProject': 'WorkVimTodos',
-\  'useMarkdownSyntax': v:true,
-\}
+    let g:todoist = {
+    \ 'icons': {
+    \   'unchecked': ' [ ] ',
+    \   'checked':   ' [X] ',
+    \   'loading':   '  ',
+    \   'error':     '  ',
+    \ },
+    \  'defaultProject': 'WorkVimTodos',
+    \  'useMarkdownSyntax': v:true,
+    \}
 
-let clap_provider_todoist = {
-\ 'source': {-> Todoist__listProjects()},
-\ 'sink': 'Todoist',
-\}
+    let clap_provider_todoist = {
+    \ 'source': {-> Todoist__listProjects()},
+    \ 'sink': 'Todoist',
+    \}
+endif
 
 " The bang version will try to download the prebuilt binary if cargo does not exist.
 Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
