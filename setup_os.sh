@@ -112,6 +112,9 @@ yay --noconfirm -S ttf-iosevka
 ## Keypass
 yay --noconfirm -S keepassxc
 
+## ssh-agent configuration
+sudo ln -s ~/.dotfiles/X11/xinit/xinitrc.d/60-ssh-agent.sh /etc/X11/xinit/xinitrc.d/60-ssh-agent.share
+
 #########################################################################################################3
 # if [ ! -f /.ssh/id_rsa.pub ]; then
 #     figlet "Have to create new SSH keys"
