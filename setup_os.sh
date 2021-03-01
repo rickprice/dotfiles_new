@@ -37,9 +37,11 @@ yay --noconfirm -S poppler
 yay --noconfirm -S pdfjam
 yay --noconfirm -S glogg
 yay --noconfirm -S pass
+yay --noconfirm -S udiskie
 
 ## Required for initial_setup.py
-sudo pip install PyYAML
+# PyYaml is pulled in automatically via udiskie and it conflicts with the Pip version
+# sudo pip install PyYAML
 
 ## Required for Neovim
 sudo pip install neovim
