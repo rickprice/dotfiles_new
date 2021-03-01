@@ -95,3 +95,21 @@ alias ls="${aliases[ls]:-ls} -A"
 # Set shell options: http://zsh.sourceforge.net/Doc/Release/Options.html.
 setopt glob_dots     # no special treatment for file names with a leading dot
 setopt no_auto_menu  # require an extra TAB press to open the completion menu
+
+
+
+
+# +++ NOTICE THIS +++ This has been added from the base configuration to load other configuration
+# Process our shell snippets to configure our environment
+source_files_in() {
+    local dir=$1
+
+    if [[ -d "$dir" && -r "$dir" && -x "$dir" ]]; then
+        for file in "$dir"/*; do
+          [[ -x "$file" && -f "$file" && -r "$file" ]] && . "$file"
+        done
+    fi
+}
+
+source_files_in ~/.shell_snippets
+# +++ NOTICE THIS +++ This has been added from the base configuration to load other configuration
