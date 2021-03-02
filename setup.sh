@@ -21,7 +21,7 @@ stow --dotfiles zshrc
 # stow --dotfiles bash
 stow --dotfiles vim
 stow --dotfiles config
-# stow --dotfiles local
+stow --dotfiles local
 stow --dotfiles tmux
 # stow --dotfiles mutt
 rm -rf ~/.i3
