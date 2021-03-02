@@ -38,7 +38,8 @@ yay --noconfirm -S pdfjam
 yay --noconfirm -S glogg
 yay --noconfirm -S pass
 yay --noconfirm -S udiskie
-yay --noconfirm -S reminna
+yay --noconfirm -S fr
+yay --noconfirm -S freerdp
 
 ## Required for initial_setup.py
 # PyYaml is pulled in automatically via udiskie and it conflicts with the Pip version
