@@ -116,6 +116,11 @@ yay --noconfirm -S keepassxc
 ## ssh-agent configuration
 sudo ln -s ~/.dotfiles/X11/xinit/xinitrc.d/60-ssh-agent.sh /etc/X11/xinit/xinitrc.d/60-ssh-agent.share
 
+## SSH Daemon
+sudo pacman --noconfirm -S openssh
+sudo systemctl enable sshd
+sudo systemctl start sshd
+
 #########################################################################################################3
 # if [ ! -f /.ssh/id_rsa.pub ]; then
 #     figlet "Have to create new SSH keys"
