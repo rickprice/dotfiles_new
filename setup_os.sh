@@ -42,7 +42,6 @@ yay --noconfirm -S reminna
 yay --noconfirm -S freerdp
 yay --noconfirm -S go
 yay --noconfirm -S zoom
-yay --noconfirm -S ansible
 
 ## Required for initial_setup.py
 # PyYaml is pulled in automatically via udiskie and it conflicts with the Pip version
@@ -124,6 +123,10 @@ sudo ln -s ~/.dotfiles/X11/xinit/xinitrc.d/60-ssh-agent.sh /etc/X11/xinit/xinitr
 sudo pacman --noconfirm -S openssh
 sudo systemctl enable sshd
 sudo systemctl start sshd
+
+## Ansible
+yay --noconfirm -S ansible
+yay --noconfirm -S python-pywinrm
 
 #########################################################################################################3
 # if [ ! -f /.ssh/id_rsa.pub ]; then
