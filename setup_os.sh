@@ -35,7 +35,6 @@ yay --noconfirm -S discord
 yay --noconfirm -S slack-desktop
 yay --noconfirm -S poppler
 yay --noconfirm -S pdfjam
-yay --noconfirm -S glogg
 yay --noconfirm -S pass
 yay --noconfirm -S udiskie
 yay --noconfirm -S reminna
@@ -128,6 +127,10 @@ sudo systemctl start sshd
 ## Ansible
 yay --noconfirm -S ansible
 yay --noconfirm -S python-pywinrm
+
+## Glogg
+yay --noconfirm -S glogg
+default glogg.desktop text/x-log
 
 #########################################################################################################3
 # if [ ! -f /.ssh/id_rsa.pub ]; then
