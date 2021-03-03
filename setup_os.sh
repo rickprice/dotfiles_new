@@ -41,6 +41,7 @@ yay --noconfirm -S reminna
 yay --noconfirm -S freerdp
 yay --noconfirm -S go
 yay --noconfirm -S zoom
+yay --noconfirm -S git-lfs
 
 ## Required for initial_setup.py
 # PyYaml is pulled in automatically via udiskie and it conflicts with the Pip version
