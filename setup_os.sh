@@ -138,7 +138,7 @@ git lfs install
 
 ## Google Chrome
 yay --noconfirm -S google-chrome
-xdg-settings set default-web-browser google-chrome.desktop
+# xdg-settings set default-web-browser google-chrome.desktop
 
 #########################################################################################################3
 # if [ ! -f /.ssh/id_rsa.pub ]; then
