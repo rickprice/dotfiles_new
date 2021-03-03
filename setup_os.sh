@@ -57,7 +57,7 @@ sudo pacman --noconfirm -S perl
 yay --noconfirm -S cpanminus
 cpanm --local-lib=~/perl5 local::lib && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
 cpanm Archive::Zip --force
-sudo cpanm Neovim::Ext
+# sudo cpanm Neovim::Ext
 # Can't use noconfirm with this because it defaults to N to delete vi and Vim
 yes | LC_ALL=en_US.UTF-8 yay -S neovim-symlinks
 
