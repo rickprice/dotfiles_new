@@ -117,7 +117,7 @@ yay --noconfirm -S ttf-iosevka
 yay --noconfirm -S keepassxc
 
 ## ssh-agent configuration
-sudo ln -s ~/.dotfiles/X11/xinit/xinitrc.d/60-ssh-agent.sh /etc/X11/xinit/xinitrc.d/60-ssh-agent.share
+sudo ln --force -s ~/.dotfiles/X11/xinit/xinitrc.d/60-ssh-agent.sh /etc/X11/xinit/xinitrc.d/60-ssh-agent.share
 
 ## SSH Daemon
 sudo pacman --noconfirm -S openssh
