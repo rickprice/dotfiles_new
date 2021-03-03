@@ -41,7 +41,6 @@ yay --noconfirm -S reminna
 yay --noconfirm -S freerdp
 yay --noconfirm -S go
 yay --noconfirm -S zoom
-yay --noconfirm -S git-lfs
 
 ## Required for initial_setup.py
 # PyYaml is pulled in automatically via udiskie and it conflicts with the Pip version
@@ -131,6 +130,10 @@ yay --noconfirm -S python-pywinrm
 ## Glogg
 yay --noconfirm -S glogg
 default glogg.desktop text/x-log
+
+## Git-LFS
+yay --noconfirm -S git-lfs
+git lfs install
 
 #########################################################################################################3
 # if [ ! -f /.ssh/id_rsa.pub ]; then
