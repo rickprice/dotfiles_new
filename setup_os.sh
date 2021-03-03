@@ -30,7 +30,6 @@ yay --noconfirm -Syu
 
 ## Install AUR packages I want
 yay --noconfirm -S neovim-nightly-bin
-yay --noconfirm -S google-chrome
 yay --noconfirm -S discord
 yay --noconfirm -S slack-desktop
 yay --noconfirm -S poppler
@@ -41,6 +40,7 @@ yay --noconfirm -S reminna
 yay --noconfirm -S freerdp
 yay --noconfirm -S go
 yay --noconfirm -S zoom
+yay --noconfirm -S neomutt
 
 ## Required for initial_setup.py
 # PyYaml is pulled in automatically via udiskie and it conflicts with the Pip version
@@ -134,6 +134,10 @@ xdg-mime default glogg.desktop text/x-log
 ## Git-LFS
 yay --noconfirm -S git-lfs
 git lfs install
+
+## Google Chrome
+yay --noconfirm -S google-chrome
+xdg-settings set default-web-browser google-chrome.desktop
 
 #########################################################################################################3
 # if [ ! -f /.ssh/id_rsa.pub ]; then
