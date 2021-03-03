@@ -36,7 +36,7 @@ yay --noconfirm -S poppler
 yay --noconfirm -S pdfjam
 yay --noconfirm -S pass
 yay --noconfirm -S udiskie
-yay --noconfirm -S reminna
+yay --noconfirm -S remmina
 yay --noconfirm -S freerdp
 yay --noconfirm -S go
 yay --noconfirm -S zoom
