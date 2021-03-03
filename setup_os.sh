@@ -129,7 +129,7 @@ yay --noconfirm -S python-pywinrm
 
 ## Glogg
 yay --noconfirm -S glogg
-default glogg.desktop text/x-log
+xdg-mime default glogg.desktop text/x-log
 
 ## Git-LFS
 yay --noconfirm -S git-lfs
