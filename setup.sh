@@ -12,10 +12,10 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
 mkdir -p ~/.cache/nvim/undo
 # Configure for ZSH
-rm ~/.zshrc
-rm ~/.p10k.zsh
-rm ~/.zshenv
-rm ~/.profile
+rm -f ~/.zshrc
+rm -f ~/.p10k.zsh
+rm -f ~/.zshenv
+rm -f ~/.profile
 stow --dotfiles zshrc
 
 # stow --dotfiles bash
