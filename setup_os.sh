@@ -42,6 +42,7 @@ yay --noconfirm -S go
 yay --noconfirm -S zoom
 yay --noconfirm -S neomutt
 yay --noconfirm -S hub
+# yay --noconfirm -S openssh-askpass
 
 ## Required for initial_setup.py
 # PyYaml is pulled in automatically via udiskie and it conflicts with the Pip version
