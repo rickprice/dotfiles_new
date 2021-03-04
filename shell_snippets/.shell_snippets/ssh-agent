@@ -1,4 +1,4 @@
-PATH=$PATH:/usr/lib/ssh
+export PATH=$PATH:/usr/lib/ssh
 if [ -f ~/.ssh/agent.env ] ; then
     . ~/.ssh/agent.env > /dev/null
     if ! kill -0 $SSH_AGENT_PID > /dev/null 2>&1; then
