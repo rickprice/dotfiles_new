@@ -396,6 +396,8 @@ def write_gitconfig_file(home_directory: Path, configuration: Any) -> None:
     conflictsstyle = diff3
 [mergetool]
     prompt = false
+[init]
+    defaultBranch = master
 """
 
     with open(file_path, "w") as file:
