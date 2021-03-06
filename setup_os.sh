@@ -101,10 +101,6 @@ sudo usermod -aG docker $USER
 sudo systemctl enable docker.service
 sudo systemctl start docker.service
 
-# VirtualBox
-# Not configured yet, but this is a link that seems good:
-# https://www.linuxtechi.com/install-virtualbox-on-arch-linux/
-
 ## Rust
 sudo pacman --noconfirm -S rustup
 rustup toolchain install stable
@@ -144,6 +140,12 @@ yay --noconfirm -S google-chrome
 # xdg-settings set default-web-browser google-chrome.desktop
 
 ## VirtualBox
+# Not configured yet, but this is a link that seems good:
+# https://www.linuxtechi.com/install-virtualbox-on-arch-linux/
+
+# have to add the correct kernel headers before we do the following:
+# You can determine what Kernel you are running with uname -a
+# sudo pacman -S kernel-headers
 sudo groupadd --force vboxusers  # Force to avoid errors when group exists already
 sudo usermod -aG vboxusers $USER
 yay --noconfirm -S virtualbox virtualbox-guest-iso virtualbox-ext-oracle
