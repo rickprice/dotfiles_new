@@ -1,6 +1,8 @@
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+exec_always --no-startup-id xrandr --output DP1-1 --auto --right-of eDP1
+
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
 
@@ -152,7 +154,7 @@ set $ws6 6
 set $ws7 7
 set $ws8 8
 
-set $ws9 9:ext
+set $ws9 "9:ext" output DP1-1 primary
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -340,10 +342,12 @@ set_from_resource $term_color13    color13
 set_from_resource $term_color14    color14
 set_from_resource $term_color15    color15
 
-exec_always xrandr --output DP1-1 --auto --right-of eDP1
-
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
+        mode hide
+        hidden_state hide
+        # modifier Mod4 # should be default anyway
+
 	i3bar_command i3bar
 	status_command i3status
 	position bottom
@@ -352,7 +356,7 @@ bar {
 #	tray_output primary
 #	tray_output eDP1
 	tray_output primary
-	tray_output eDP1
+	# tray_output eDP1
 
 	bindsym button4 nop
 	bindsym button5 nop

@@ -145,7 +145,7 @@ yay --noconfirm -S google-chrome
 
 # have to add the correct kernel headers before we do the following:
 # You can determine what Kernel you are running with uname -a
-# sudo pacman -S kernel-headers
+# sudo pacman -S linux-headers
 sudo groupadd --force vboxusers  # Force to avoid errors when group exists already
 sudo usermod -aG vboxusers $USER
 yay --noconfirm -S virtualbox virtualbox-guest-iso virtualbox-ext-oracle
