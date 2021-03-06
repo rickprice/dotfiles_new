@@ -144,17 +144,27 @@ bindsym $mod+Ctrl+Left workspace prev
 # to display names or symbols instead of plain workspace numbers you can use
 # something like: set $ws1 1:mail
 #                 set $ws2 2:
-set $ws1 1 output primary
-set $ws2 2 output primary
-set $ws3 3 output primary
-set $ws4 4 output primary
-set $ws5 5 output primary
-set $ws6 6 output primary
-set $ws7 7 output primary
-set $ws8 8 output primary
+set $ws1 1
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $ws5 5
+set $ws6 6
+set $ws7 7
+set $ws8 8
 
-set $ws9 9:ext output DP1-1 primary
+set $ws9 9:ext
 
+# Assign to workspaces
+workspace 1 output primary
+workspace 2 output primary
+workspace 3 output primary
+workspace 4 output primary
+workspace 5 output primary
+workspace 6 output primary
+workspace 7 output primary
+workspace 8 output primary
+workspace "9: ext" output DP1-1 primary
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
