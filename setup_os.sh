@@ -42,7 +42,7 @@ yay --noconfirm -S go
 yay --noconfirm -S zoom
 yay --noconfirm -S neomutt
 yay --noconfirm -S hub
-yay --noconfirm -S x11-openssh-askpass
+yay --noconfirm -S openssh-askpass
 yay --noconfirm -S mosh
 
 ## Required for initial_setup.py
