@@ -43,6 +43,7 @@ yay --noconfirm -S zoom
 yay --noconfirm -S neomutt
 yay --noconfirm -S hub
 yay --noconfirm -S x11-openssh-askpass
+yay --noconfirm -S mosh
 
 ## Required for initial_setup.py
 # PyYaml is pulled in automatically via udiskie and it conflicts with the Pip version
@@ -141,6 +142,12 @@ git lfs install
 ## Google Chrome
 yay --noconfirm -S google-chrome
 # xdg-settings set default-web-browser google-chrome.desktop
+
+## VirtualBox
+sudo groupadd --force vboxusers  # Force to avoid errors when group exists already
+sudo usermod -aG vboxusers $USER
+yay --noconfirm -S virtualbox virtualbox-guest-iso virtualbox-ext-oracle
+
 
 #########################################################################################################3
 # if [ ! -f /.ssh/id_rsa.pub ]; then
