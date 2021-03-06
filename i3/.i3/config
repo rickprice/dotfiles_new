@@ -331,7 +331,7 @@ set_from_resource $term_color13    color13
 set_from_resource $term_color14    color14
 set_from_resource $term_color15    color15
 
-exec-always xrandr --output DP1-1 --auto --right-of eDP1
+exec_always xrandr --output DP1-1 --auto --right-of eDP1
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
