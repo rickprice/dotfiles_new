@@ -245,15 +245,22 @@ endif
 ":set background=dark
 ":set background=light
 
+" If we don't have enough colors (like I'm connecting via JuiceSSH), then just
+" use the default colorscheme
+if &t_Co >= 256 && ($TERM isnot# 'xterm')
 " gVim would have 'gui_running'
 " We silently ignore failures on the colorscheme, this is because they may not
 " be loaded yet when (Neo)Vim first loads the configuration
-if has("gui_running")
-    :silent! colorscheme humanoid
-    :set background=light
+    if has("gui_running")
+        :silent! colorscheme humanoid
+        :set background=light
+    else
+    "    :colorscheme challenger_deep
+        :silent! colorscheme dichromatic
+        :set background=dark
+    endif
 else
-"    :colorscheme challenger_deep
-    :silent! colorscheme dichromatic
+    :silent colorscheme default
     :set background=dark
 endif
 
