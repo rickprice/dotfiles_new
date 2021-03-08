@@ -20,6 +20,7 @@ stow --dotfiles zshrc
 
 # stow --dotfiles bash
 stow --dotfiles vim
+rm -rf ~/.config/mimeapps.list
 stow --dotfiles config
 stow --dotfiles local
 stow --dotfiles tmux
