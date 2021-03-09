@@ -221,6 +221,7 @@ endif
 Plug 'romainl/vim-dichromatic'
 Plug 'humanoid-colors/vim-humanoid-colorscheme'
 
+" Plug 'arcticicestudio/nord-vim'
 "Plug 'rakr/vim-one'
 "Plug 'challenger-deep-theme/vim'
 
