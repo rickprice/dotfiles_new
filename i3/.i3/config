@@ -1,6 +1,6 @@
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
-exec_always --no-startup-id xrandr --output DP1-1 --auto --right-of eDP1
+exec_always --no-startup-id xrandr --output DP1-1 --auto --above eDP1
 
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
