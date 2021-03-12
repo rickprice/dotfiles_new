@@ -225,7 +225,7 @@ Plug 'humanoid-colors/vim-humanoid-colorscheme'
 " Plug 'arcticicestudio/nord-vim'
 "Plug 'rakr/vim-one'
 "Plug 'challenger-deep-theme/vim'
-"Plug 'sonph/onehalf', { 'rtp': 'vim' }
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
 
 "This is for you Noah
 "Plug 'dracula/vim', { 'as': 'dracula' }
