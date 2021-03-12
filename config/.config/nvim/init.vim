@@ -218,7 +218,8 @@ endif
 "Plug 'vim-scripts/colorsupport.vim'
 
 " - Color plugins
-Plug 'romainl/vim-dichromatic'
+Plug 'jacoborus/tender.vim'
+" Plug 'romainl/vim-dichromatic'
 Plug 'humanoid-colors/vim-humanoid-colorscheme'
 
 " Plug 'arcticicestudio/nord-vim'
@@ -234,6 +235,10 @@ call plug#end()
 " Color Scheme setup
 if g:is_nvim || has('termguicolors')
     set termguicolors
+endif
+
+if g:is_nvim
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 endif
 
 ":colorscheme one
@@ -256,12 +261,17 @@ if &t_Co >= 256 && ($TERM isnot# 'xterm')
         :silent! colorscheme humanoid
         :set background=light
     else
-    "    :colorscheme challenger_deep
-        :silent! colorscheme dichromatic
+    "    :silent! colorscheme challenger_deep
+    "    :silent! colorscheme dichromatic
+
+        :silent! colorscheme tender
+        " set airline theme
+        let g:airline_theme = 'tender'
+
         :set background=dark
     endif
 else
-    :silent colorscheme default
+    :silent! colorscheme default
     :set background=dark
 endif
 
