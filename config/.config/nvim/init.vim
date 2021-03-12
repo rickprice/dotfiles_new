@@ -225,6 +225,7 @@ Plug 'humanoid-colors/vim-humanoid-colorscheme'
 " Plug 'arcticicestudio/nord-vim'
 "Plug 'rakr/vim-one'
 "Plug 'challenger-deep-theme/vim'
+"Plug 'sonph/onehalf', { 'rtp': 'vim' }
 
 "This is for you Noah
 "Plug 'dracula/vim', { 'as': 'dracula' }
@@ -233,8 +234,13 @@ Plug 'humanoid-colors/vim-humanoid-colorscheme'
 call plug#end()
 
 " Color Scheme setup
-if g:is_nvim || has('termguicolors')
-    set termguicolors
+
+set cursorline
+
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
 endif
 
 if g:is_nvim
