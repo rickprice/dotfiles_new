@@ -45,6 +45,7 @@ yay --noconfirm -S hub
 yay --noconfirm -S x11-ssh-askpass
 yay --noconfirm -S mosh
 yay --noconfirm -S timeshift
+yay --noconfirm -S timeshift-autosnap
 
 ## Required for initial_setup.py
 # PyYaml is pulled in automatically via udiskie and it conflicts with the Pip version
