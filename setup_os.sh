@@ -45,6 +45,8 @@ yay --noconfirm -S hub
 yay --noconfirm -S x11-ssh-askpass
 yay --noconfirm -S mosh
 yay --noconfirm -S timeshift
+yay --noconfirm -S milcheck-bin
+yay --noconfirm -S firefox-developer-edition
 
 ## Required for initial_setup.py
 # PyYaml is pulled in automatically via udiskie and it conflicts with the Pip version
