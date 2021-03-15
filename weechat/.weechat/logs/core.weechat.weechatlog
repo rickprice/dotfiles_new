@@ -110,3 +110,8 @@
 2021-03-15 12:44:29		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, lua, perl, python, relay, ruby, script, trigger, xfer
 2021-03-15 12:44:51		Option changed: sec.crypt.passphrase_command = "pass show weechat/passphrase"  (default: "")
 2021-03-15 12:45:18		Option changed: sec.crypt.passphrase_command = "pass show weechat/crypt/password"  (default: "")
+2021-03-15 12:48:29		Passphrase added
+2021-03-15 12:48:29		Important: an external program is configured to read the passphrase on startup (option sec.crypt.passphrase_command); you must ensure this program returns the new passphrase you just defined
+2021-03-15 12:49:07		Secured data "freenode_password" set
+2021-03-15 12:49:07		Options saved to sec.conf
+2021-03-15 12:49:26		Option changed: irc.server.freenode.sasl_password = "${sec.data.freenode_password}"  (default if null: "")
