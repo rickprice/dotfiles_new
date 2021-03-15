@@ -155,6 +155,12 @@ sudo groupadd --force vboxusers  # Force to avoid errors when group exists alrea
 sudo usermod -aG vboxusers $USER
 yay --noconfirm -S virtualbox virtualbox-guest-iso virtualbox-ext-oracle
 
+# Setup mirrors better
+# sudo pacman-mirrors -c Canada
+sudo pacman-mirrors -c all
+sudo pacman -Syyu
+yay -Syyu
+
 
 #########################################################################################################3
 # if [ ! -f /.ssh/id_rsa.pub ]; then
