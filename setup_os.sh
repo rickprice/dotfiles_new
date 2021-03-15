@@ -48,6 +48,7 @@ yay --noconfirm -S timeshift
 yay --noconfirm -S timeshift-autosnap
 yay --noconfirm -S milcheck-bin
 yay --noconfirm -S firefox-developer-edition
+yay --noconfirm -S weechat-git
 
 ## Required for initial_setup.py
 # PyYaml is pulled in automatically via udiskie and it conflicts with the Pip version

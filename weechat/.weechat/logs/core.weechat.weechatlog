@@ -102,3 +102,11 @@
 2021-03-15 12:01:59	=!=	irc: command "motd" must be executed on irc buffer (server, channel or private)
 2021-03-15 12:02:10	=!=	irc: already connected to server "freenode"!
 2021-03-15 12:03:34		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, lua, perl, python, relay, ruby, script, trigger, xfer
+2021-03-15 12:13:55		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, lua, perl, python, relay, ruby, script, trigger, xfer
+2021-03-15 12:33:55		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, lua, perl, python, relay, ruby, script, trigger, xfer
+2021-03-15 12:34:28	=!=	Error: option "sec.crypt.passphrase_command" not found
+2021-03-15 12:35:16	=!=	Error: option "sec.crypt.passphrase_command" not found
+2021-03-15 12:37:28	=!=	You can not write text in this buffer
+2021-03-15 12:44:29		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, lua, perl, python, relay, ruby, script, trigger, xfer
+2021-03-15 12:44:51		Option changed: sec.crypt.passphrase_command = "pass show weechat/passphrase"  (default: "")
+2021-03-15 12:45:18		Option changed: sec.crypt.passphrase_command = "pass show weechat/crypt/password"  (default: "")

@@ -544,3 +544,99 @@
 2021-03-15 12:03:48	--	CTCP reply to freenode-connect: VERSION WeeChat 3.0.1 (Feb 28 2021 16:31:11)
 2021-03-15 12:05:08	--	You are now known as SiliconValley
 2021-03-15 12:05:29	--	irc: disconnected from server
+2021-03-15 12:13:59	--	irc: connecting to server chat.freenode.net/7000 (SSL)...
+2021-03-15 12:14:00	--	gnutls: connected using 2048-bit Diffie-Hellman shared secret exchange
+2021-03-15 12:14:00	--	gnutls: receiving 2 certificates
+2021-03-15 12:14:00	--	 - certificate[1] info:
+2021-03-15 12:14:00	--	   - subject `CN=tepper.freenode.net', issuer `CN=R3,O=Let's Encrypt,C=US', serial 0x0424663c48483628dde40da6720735b6e76a, RSA key 4096 bits, signed using RSA-SHA256, activated `2021-03-08 05:42:15 UTC', expires `2021-06-06 05:42:15 UTC', pin-sha256="WjH6UueCkVey1W3W1fEhEoAfwFq11WFFPDEuEJ0cupE="
+2021-03-15 12:14:00	--	 - certificate[2] info:
+2021-03-15 12:14:00	--	   - subject `CN=R3,O=Let's Encrypt,C=US', issuer `CN=DST Root CA X3,O=Digital Signature Trust Co.', serial 0x400175048314a4c8218c84a90c16cddf, RSA key 2048 bits, signed using RSA-SHA256, activated `2020-10-07 19:21:40 UTC', expires `2021-09-29 19:21:40 UTC', pin-sha256="jQJTbIh0grw0/1TkHSumWb+Fs0Ggogr621gT3PvPKG0="
+2021-03-15 12:14:00	--	gnutls: peer's certificate is trusted
+2021-03-15 12:14:00	--	irc: connected to chat.freenode.net/7000 (192.186.157.43)
+2021-03-15 12:14:00	--	tepper.freenode.net: *** Looking up your hostname...
+2021-03-15 12:14:00	--	tepper.freenode.net: *** Checking Ident
+2021-03-15 12:14:00	--	tepper.freenode.net: *** Found your hostname
+2021-03-15 12:14:06	--	tepper.freenode.net: *** No Ident response
+2021-03-15 12:14:06	--	irc: client capability, server supports: extended-join tls multi-prefix identify-msg account-notify chghost sasl cap-notify away-notify
+2021-03-15 12:14:06	--	irc: client capability, requesting: sasl
+2021-03-15 12:14:06	--	irc: client capability, enabled: sasl
+2021-03-15 12:14:07	--	You are now logged in as FrederickPrice. (fprice!fprice@135-23-83-68.cpe.pppoe.ca)
+2021-03-15 12:14:07	--	SASL authentication successful
+2021-03-15 12:14:07	--	Welcome to the freenode Internet Relay Chat Network fprice
+2021-03-15 12:14:07	--	Your host is tepper.freenode.net[192.186.157.43/7000], running version ircd-seven-1.1.9
+2021-03-15 12:14:07	--	This server was created Sun Mar 15 2020 at 17:51:04 UTC
+2021-03-15 12:14:07	--	tepper.freenode.net ircd-seven-1.1.9 DOQRSZaghilopsuwz CFILMPQSbcefgijklmnopqrstuvz bkloveqjfI
+2021-03-15 12:14:07	--	CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQScgimnprstuz CHANLIMIT=#:120 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=freenode STATUSMSG=@+ CALLERID=g CASEMAPPING=rfc1459 :are supported by this server
+2021-03-15 12:14:07	--	CHARSET=ascii NICKLEN=16 CHANNELLEN=50 TOPICLEN=390 DEAF=D FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,ajrxz CLIENTVER=3.0 ETRACE KNOCK WHOX :are supported by this server
+2021-03-15 12:14:07	--	CPRIVMSG CNOTICE SAFELIST ELIST=CTU MONITOR=100 :are supported by this server
+2021-03-15 12:14:07	--	There are 91 users and 83906 invisible on 32 servers
+2021-03-15 12:14:07	--	31 :IRC Operators online
+2021-03-15 12:14:07	--	15 :unknown connection(s)
+2021-03-15 12:14:07	--	46484 :channels formed
+2021-03-15 12:14:07	--	I have 4116 clients and 1 servers
+2021-03-15 12:14:07	--	4116 5454 :Current local users 4116, max 5454
+2021-03-15 12:14:07	--	83997 91110 :Current global users 83997, max 91110
+2021-03-15 12:14:07	--	Highest connection count: 5455 (5454 clients) (2101441 connections received)
+2021-03-15 12:14:07	--	- tepper.freenode.net Message of the Day -
+2021-03-15 12:14:07	--	- Welcome to tepper.freenode.net in Buffalo, NY.
+2021-03-15 12:14:07	--	- Thanks to http://www.servermania.com/ for sponsoring
+2021-03-15 12:14:07	--	- this server!
+2021-03-15 12:14:07	--	-
+2021-03-15 12:14:07	--	-
+2021-03-15 12:14:07	--	- TEPPER, SHERI S. (1929-), an American science fiction,
+2021-03-15 12:14:07	--	- horror and mystery novel author, behind more than thirty
+2021-03-15 12:14:07	--	- books, many themed unapologetically eco-feminist. Her
+2021-03-15 12:14:07	--	- writing career started composing children's stories, but
+2021-03-15 12:14:07	--	- moved to adult fiction in 1982. With the 1991 novel
+2021-03-15 12:14:07	--	- 'Beauty' she won the Locus award for Best Fantasy Novel.
+2021-03-15 12:14:07	--	- Her other well-known works include 'Grass' (1989, nominated
+2021-03-15 12:14:07	--	- for Hugo and Locus Awards in 1990) and 'Gate to Women's
+2021-03-15 12:14:07	--	- Country' (1988).
+2021-03-15 12:14:07	--	-
+2021-03-15 12:14:07	--	- Welcome to freenode - supporting the free and open source
+2021-03-15 12:14:07	--	- software communities since 1998.
+2021-03-15 12:14:07	--	-
+2021-03-15 12:14:07	--	- By connecting to freenode you indicate that you have read and
+2021-03-15 12:14:07	--	- accept our policies and guidelines as set out on https://freenode.net
+2021-03-15 12:14:07	--	-
+2021-03-15 12:14:07	--	- In the event that you observe behaviour that contravenes our policies,
+2021-03-15 12:14:07	--	- please notify a volunteer staff member via private message, or send us an
+2021-03-15 12:14:07	--	- e-mail to complaints@freenode.net -- we will do our best to address the
+2021-03-15 12:14:07	--	- situation within a reasonable period of time, and we may request further
+2021-03-15 12:14:07	--	- information or, as appropriate, involve other parties such as channel operators
+2021-03-15 12:14:07	--	- Group Contacts representing an on-topic group.
+2021-03-15 12:14:07	--	-
+2021-03-15 12:14:07	--	- freenode runs an open proxy scanner.
+2021-03-15 12:14:07	--	-
+2021-03-15 12:14:07	--	- If you are looking for assistance, you may be able to find a list of
+2021-03-15 12:14:07	--	- volunteer staff on '/stats p' (shows only on-call staff) or by joining
+2021-03-15 12:14:07	--	- #freenode and using the '/who freenode/staff/*' command. You may message
+2021-03-15 12:14:07	--	- any of us at any time. Please note that freenode predominantly provides
+2021-03-15 12:14:07	--	- assistance via private message, and while we have a network channel the
+2021-03-15 12:14:07	--	- primary venue for support requests is via private message to a member
+2021-03-15 12:14:07	--	- of the volunteer staff team.
+2021-03-15 12:14:07	--	-
+2021-03-15 12:14:07	--	- From time to time, volunteer staff may send server-wide notices relating to
+2021-03-15 12:14:07	--	- the project, or the communities that we host. The majority of such notices
+2021-03-15 12:14:07	--	- will be sent as wallops, and you can '/mode <yournick> +w' to ensure that you
+2021-03-15 12:14:07	--	- do not miss them. Important messages relating to the freenode project, including
+2021-03-15 12:14:07	--	- notices of upcoming maintenance and other scheduled downtime will be issued as
+2021-03-15 12:14:07	--	- global notices.
+2021-03-15 12:14:07	--	-
+2021-03-15 12:14:07	--	- Representing an on-topic project? Don't forget to register, more information
+2021-03-15 12:14:07	--	- can be found on the https://freenode.net website under "Group Registration".
+2021-03-15 12:14:07	--	-
+2021-03-15 12:14:07	--	- Thank you also to our server sponsors for the sustained support in keeping the
+2021-03-15 12:14:07	--	- network going for close to two decades.
+2021-03-15 12:14:07	--	-
+2021-03-15 12:14:07	--	- Thank you for using freenode!
+2021-03-15 12:14:07	--	End of /MOTD command.
+2021-03-15 12:14:07	--	User mode [+RZi] by fprice
+2021-03-15 12:14:08	--	freenode-connect (frigg@freenode/utility-bot/frigg): Welcome to freenode. To protect the network all new connections will be scanned for vulnerabilities. This will not harm your computer, and vulnerable hosts will be notified.
+2021-03-15 12:14:08	--	CTCP requested by freenode-connect: VERSION
+2021-03-15 12:14:08	--	CTCP reply to freenode-connect: VERSION WeeChat 3.0.1 (Feb 28 2021 16:31:11)
+2021-03-15 12:14:21	--	You are now known as SiliconValley
+2021-03-15 12:18:23	--	MSG(NickServ): SETPASSWORD IL0VETamaraPrice.77
+2021-03-15 12:18:23	--	NickServ (NickServ@services.): Invalid command. Use /msg NickServ help for a command listing.
+2021-03-15 12:18:37	--	MSG(NickServ): SET PASSWORD *******************
+2021-03-15 12:18:37	--	NickServ (NickServ@services.): The password for FrederickPrice has been changed to IL0VETamaraPrice.77.
