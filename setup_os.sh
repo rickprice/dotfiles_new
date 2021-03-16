@@ -51,6 +51,7 @@ yay --noconfirm -S firefox-developer-edition
 yay --noconfirm -S weechat-git
 yay --noconfirm -S googler
 yay --noconfirm -S so
+yay --nocorfirm -S luakit-git
 
 ## Required for initial_setup.py
 # PyYaml is pulled in automatically via udiskie and it conflicts with the Pip version
