@@ -25,59 +25,59 @@ font:
     # Style can be specified to pick a specific face.
     style: Italic
 
-# # XTerm's default colors
-# colors:
-#    # Default colors
-#    primary:
-#      background: '#000000'
-#      foreground: '#ffffff'
-#    # Normal colors
-#    normal:
-#      black:   '#000000'
-#      red:     '#cd0000'
-#      green:   '#00cd00'
-#      yellow:  '#cdcd00'
-#      blue:    '#0000ee'
-#      magenta: '#cd00cd'
-#      cyan:    '#00cdcd'
-#      white:   '#e5e5e5'
+# XTerm's default colors
+colors:
+   # Default colors
+   primary:
+     background: '#000000'
+     foreground: '#ffffff'
+   # Normal colors
+   normal:
+     black:   '#000000'
+     red:     '#cd0000'
+     green:   '#00cd00'
+     yellow:  '#cdcd00'
+     blue:    '#0000ee'
+     magenta: '#cd00cd'
+     cyan:    '#00cdcd'
+     white:   '#e5e5e5'
 
-#    # Bright colors
-#    bright:
-#      black:   '#7f7f7f'
-#      red:     '#ff0000'
-#      green:   '#00ff00'
-#      yellow:  '#ffff00'
-#      blue:    '#5c5cff'
-#      magenta: '#ff00ff'
-#      cyan:    '#00ffff'
-#      white:   '#ffffff'
+   # Bright colors
+   bright:
+     black:   '#7f7f7f'
+     red:     '#ff0000'
+     green:   '#00ff00'
+     yellow:  '#ffff00'
+     blue:    '#5c5cff'
+     magenta: '#ff00ff'
+     cyan:    '#00ffff'
+     white:   '#ffffff'
 
 # Colors (Tender)
-colors:
-  # Default colors
-  primary:
-    background: '0x282828'
-    foreground: '0xeeeeee'
+# colors:
+#   # Default colors
+#   primary:
+#     background: '0x282828'
+#     foreground: '0xeeeeee'
 
-  # Normal colors
-  normal:
-    black:   '0x282828'
-    red:     '0xf43753'
-    green:   '0xc9d05c'
-    yellow:  '0xffc24b'
-    blue:    '0xb3deef'
-    magenta: '0xd3b987'
-    cyan:    '0x73cef4'
-    white:   '0xeeeeee'
+#   # Normal colors
+#   normal:
+#     black:   '0x282828'
+#     red:     '0xf43753'
+#     green:   '0xc9d05c'
+#     yellow:  '0xffc24b'
+#     blue:    '0xb3deef'
+#     magenta: '0xd3b987'
+#     cyan:    '0x73cef4'
+#     white:   '0xeeeeee'
 
-  # Bright colors
-  bright:
-    black:   '0x4c4c4c'
-    red:     '0xf43753'
-    green:   '0xc9d05c'
-    yellow:  '0xffc24b'
-    blue:    '0xb3deef'
-    magenta: '0xd3b987'
-    cyan:    '0x73cef4'
-    white:   '0xfeffff'
+#   # Bright colors
+#   bright:
+#     black:   '0x4c4c4c'
+#     red:     '0xf43753'
+#     green:   '0xc9d05c'
+#     yellow:  '0xffc24b'
+#     blue:    '0xb3deef'
+#     magenta: '0xd3b987'
+#     cyan:    '0x73cef4'
+#     white:   '0xfeffff'

@@ -219,10 +219,11 @@ endif
 
 " - Color plugins
 Plug 'jacoborus/tender.vim'
+Plug 'bratpeki/truedark-vim'
 " Plug 'romainl/vim-dichromatic'
 Plug 'humanoid-colors/vim-humanoid-colorscheme'
 
-" Plug 'arcticicestudio/nord-vim'
+Plug 'arcticicestudio/nord-vim'
 "Plug 'rakr/vim-one'
 "Plug 'challenger-deep-theme/vim'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
@@ -270,9 +271,11 @@ if &t_Co >= 256 && ($TERM isnot# 'xterm')
     "    :silent! colorscheme challenger_deep
     "    :silent! colorscheme dichromatic
 
-        :silent! colorscheme tender
+        " :silent! colorscheme koehler
+        " :silent! colorscheme tender
+        :silent! colorscheme truedark
         " set airline theme
-        let g:airline_theme = 'tender'
+        " let g:airline_theme = 'tender'
 
         :set background=dark
     endif
