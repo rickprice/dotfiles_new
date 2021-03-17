@@ -221,7 +221,7 @@ endif
 " Plug 'cseelus/vim-colors-lucid'
 Plug 'josegamez82/starrynight'
 " Plug 'jacoborus/tender.vim'
-" Plug 'bratpeki/truedark-vim'
+Plug 'rickprice/truedark-vim'
 " Plug 'romainl/vim-dichromatic'
 Plug 'humanoid-colors/vim-humanoid-colorscheme'
 
