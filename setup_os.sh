@@ -24,6 +24,7 @@ sudo pacman --noconfirm -S fd
 sudo pacman --noconfirm -S tmux
 sudo pacman --noconfirm -S zip
 sudo pacman --noconfirm -S unzip
+sudo pacman --noconfirm -S tlp tlp-rdw acpi_call
 
 ## Update everything in the AUR
 yay --noconfirm -Syu
@@ -164,6 +165,10 @@ sudo pacman-mirrors -c all
 sudo pacman -Syyu
 yay -Syyu
 
+# power management
+systemctl enable tlp.service
+systemctl enable NetworkManager-dispatcher.service
+systemctl mask systemd-rfkill.service systemctl mask systemd-rfkill.socket
 
 #########################################################################################################3
 # if [ ! -f /.ssh/id_rsa.pub ]; then
