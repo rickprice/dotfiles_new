@@ -218,18 +218,20 @@ endif
 "Plug 'vim-scripts/colorsupport.vim'
 
 " - Color plugins
-Plug 'jacoborus/tender.vim'
-Plug 'bratpeki/truedark-vim'
+" Plug 'cseelus/vim-colors-lucid'
+Plug 'josegamez82/starrynight'
+" Plug 'jacoborus/tender.vim'
+" Plug 'bratpeki/truedark-vim'
 " Plug 'romainl/vim-dichromatic'
 Plug 'humanoid-colors/vim-humanoid-colorscheme'
 
-Plug 'arcticicestudio/nord-vim'
-"Plug 'rakr/vim-one'
-"Plug 'challenger-deep-theme/vim'
-Plug 'sonph/onehalf', { 'rtp': 'vim' }
+" Plug 'arcticicestudio/nord-vim'
+" Plug 'rakr/vim-one'
+" Plug 'challenger-deep-theme/vim'
+" Plug 'sonph/onehalf', { 'rtp': 'vim' }
 
 "This is for you Noah
-"Plug 'dracula/vim', { 'as': 'dracula' }
+" Plug 'dracula/vim', { 'as': 'dracula' }
 
 
 call plug#end()
@@ -273,7 +275,8 @@ if &t_Co >= 256 && ($TERM isnot# 'xterm')
 
         " :silent! colorscheme koehler
         " :silent! colorscheme tender
-        :silent! colorscheme truedark
+        :silent! colorscheme starrynight
+        " :silent! colorscheme truedark
         " set airline theme
         " let g:airline_theme = 'tender'
 
