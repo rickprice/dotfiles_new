@@ -166,9 +166,9 @@ sudo pacman -Syyu
 yay -Syyu
 
 # power management
-systemctl enable tlp.service
-systemctl enable NetworkManager-dispatcher.service
-systemctl mask systemd-rfkill.service systemctl mask systemd-rfkill.socket
+sudo systemctl enable tlp.service
+sudo systemctl enable NetworkManager-dispatcher.service
+sudo systemctl mask systemd-rfkill.service systemctl mask systemd-rfkill.socket
 
 #########################################################################################################3
 # if [ ! -f /.ssh/id_rsa.pub ]; then
