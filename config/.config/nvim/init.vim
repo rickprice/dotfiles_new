@@ -218,8 +218,9 @@ endif
 "Plug 'vim-scripts/colorsupport.vim'
 
 " - Color plugins
-" Plug 'cseelus/vim-colors-lucid'
 Plug 'josegamez82/starrynight'
+" Plug 'cseelus/vim-colors-lucid'
+" Plug 'NLKNguyen/papercolor-theme'
 " Plug 'jacoborus/tender.vim'
 Plug 'bratpeki/truedark-vim'
 " Plug 'romainl/vim-dichromatic'
