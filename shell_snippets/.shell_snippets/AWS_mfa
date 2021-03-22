@@ -1,0 +1,10 @@
+export THR_ROOT=~/Documents/ActiveState/TheHomeRepot
+
+function aws_mfa() {
+    if ! aws s3 ls > /dev/null 2>&1
+    then
+        (cd $THR_ROOT && bazel run //extras/aws-mfa-auth)
+    fi
+}
+
+aws_mfa

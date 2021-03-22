@@ -53,7 +53,7 @@ yay --noconfirm -S googler
 yay --noconfirm -S so
 yay --noconfirm -S luakit-git
 yay --noconfirm -S fwupd
-yay --noconfirm -S github-cli-git
+yay --noconfirm -S bazelisk-bin
 
 ## Required for initial_setup.py
 # PyYaml is pulled in automatically via udiskie and it conflicts with the Pip version
