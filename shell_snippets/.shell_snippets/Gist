@@ -1,0 +1,2 @@
+export GIST_USER=$(pass show gh/gihtub/user)
+export GIST_TOKEN=$(pass show gh/gihtub/oauth_token)

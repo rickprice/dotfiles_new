@@ -50,5 +50,9 @@ github.com:
     git_protocol: ssh
 End-of-message
 
+git config --global github.user rickprice
+
 # nvim +PluginInstall +qall
 # gvim +PluginInstall +qall
+
+exit 0
