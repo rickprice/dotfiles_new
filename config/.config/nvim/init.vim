@@ -110,6 +110,9 @@ Plug 'andymass/vim-matchup'
 
 Plug 'mileszs/ack.vim'
 
+" Gists
+Plug 'mattn/webapi-vim'
+Plug 'mattn/vim-gist'
 
 " Motion plugins
 Plug 'easymotion/vim-easymotion'
@@ -297,6 +300,12 @@ nnoremap <silent> <Leader>f :Rg<CR>
 command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
 set grepprg=rg\ --vimgrep\ --smart-case\ --follow
 
+" Gist setup
+let g:gist_clip_command = 'xclip -selection clipboard'
+let g:gist_detect_filetype = 1
+let g:gist_open_browser_after_post = 1
+let g:gist_show_privates = 1
+let g:gist_post_private = 1
 
 
 " CoC Setup
