@@ -24,6 +24,7 @@ sudo pacman --noconfirm -S fd
 sudo pacman --noconfirm -S tmux
 sudo pacman --noconfirm -S zip
 sudo pacman --noconfirm -S unzip
+sudo pacman --noconfirm -S tlp tlp-rdw acpi_call
 
 ## Update everything in the AUR
 yay --noconfirm -Syu
@@ -46,12 +47,13 @@ yay --noconfirm -S x11-ssh-askpass
 yay --noconfirm -S mosh
 yay --noconfirm -S timeshift
 yay --noconfirm -S timeshift-autosnap
-yay --noconfirm -S milcheck-bin
 yay --noconfirm -S firefox-developer-edition
 yay --noconfirm -S weechat-git
 yay --noconfirm -S googler
 yay --noconfirm -S so
-yay --nocorfirm -S luakit-git
+yay --noconfirm -S luakit-git
+yay --noconfirm -S fwupd
+yay --noconfirm -S github-cli-git
 
 ## Required for initial_setup.py
 # PyYaml is pulled in automatically via udiskie and it conflicts with the Pip version
@@ -164,6 +166,10 @@ sudo pacman-mirrors -c all
 sudo pacman -Syyu
 yay -Syyu
 
+# power management
+sudo systemctl enable tlp.service
+sudo systemctl enable NetworkManager-dispatcher.service
+sudo systemctl mask systemd-rfkill.service systemctl mask systemd-rfkill.socket
 
 #########################################################################################################3
 # if [ ! -f /.ssh/id_rsa.pub ]; then
