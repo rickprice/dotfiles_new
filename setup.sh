@@ -37,5 +37,18 @@ stow --dotfiles shell_snippets
 # Prepare a vimrc file in ~/.config/nvim folder
 ln -sf ~/.config/nvim/init.vim ~/.vimrc
 
+# Configure GH files
+USER=$(pass show gh/gihtub/user)
+OAUTH_TOKEN=$(pass show gh/gihtub/oauth_token)
+PROTOCOL=$(pass show gh/gihtub/git_protocol)
+# OAUTH_TOKEN=thisisatest
+
+cat >~/.config/gh/hosts.yml <<End-of-message
+github.com:
+    user: rickprice
+    oauth_token: $OAUTH_TOKEN
+    git_protocol: ssh
+End-of-message
+
 # nvim +PluginInstall +qall
 # gvim +PluginInstall +qall
