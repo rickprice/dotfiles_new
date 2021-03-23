@@ -134,6 +134,9 @@ Plug 'pedrohdz/vim-yaml-folds'
 Plug 'vimwiki/vimwiki'
 Plug 'mattn/calendar-vim'
 
+" For handling marks
+Plug 'kshenoy/vim-signature'
+
 "UltiSnips engine
 if g:has_python3 || g:is_nvim5
     " Track the engine.
