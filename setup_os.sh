@@ -55,6 +55,7 @@ yay --noconfirm -S luakit-git
 yay --noconfirm -S fwupd
 yay --noconfirm -S bazelisk-bin
 yay --noconfirm -S meld
+yay --noconfirm -S aws-cli
 
 ## Required for initial_setup.py
 # PyYaml is pulled in automatically via udiskie and it conflicts with the Pip version
