@@ -1,5 +1,5 @@
 export THR_ROOT=~/Documents/ActiveState/TheHomeRepot
-export AWS_PROFILE=aws
+export AWS_PROFILE=mfa
 
 function aws_mfa() {
     if ! aws s3 ls > /dev/null 2>&1
