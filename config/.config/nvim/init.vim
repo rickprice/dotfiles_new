@@ -222,6 +222,9 @@ endif
 "Plug 'xolox/vim-colorscheme-switcher'
 "Plug 'xolox/vim-misc'
 "Plug 'vim-scripts/colorsupport.vim'
+" Plug 'tanvirtin/monokai.nvim'
+" Plug 'tomasr/molokai'
+Plug 'changyuheng/color-scheme-holokai-for-vim'
 
 " - Color plugins
 Plug 'josegamez82/starrynight'
@@ -257,6 +260,9 @@ if g:is_nvim
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 endif
 
+" For tomasr/molokai
+" let g:molokai_original = 1
+
 ":colorscheme one
 ":set background=dark
 
@@ -282,7 +288,8 @@ if &t_Co >= 256 && ($TERM isnot# 'xterm')
 
         " :silent! colorscheme koehler
         " :silent! colorscheme tender
-        :silent! colorscheme starrynight
+        " :silent! colorscheme starrynight
+        :silent! colorscheme holokai
         " :silent! colorscheme truedark
         " set airline theme
         " let g:airline_theme = 'tender'
