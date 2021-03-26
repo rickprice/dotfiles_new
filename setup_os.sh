@@ -56,6 +56,7 @@ yay --noconfirm -S fwupd
 yay --noconfirm -S bazelisk-bin
 yay --noconfirm -S meld
 yay --noconfirm -S aws-cli
+yay --noconfirm -S postgresql-libs # Needed for ActiveState BE tools
 
 ## Required for initial_setup.py
 # PyYaml is pulled in automatically via udiskie and it conflicts with the Pip version
