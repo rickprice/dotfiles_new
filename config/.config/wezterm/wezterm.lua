@@ -1,6 +1,7 @@
 local wezterm = require 'wezterm';
 return {
   enable_tab_bar=false,
+  color_scheme="Adventure",
 
   -- font = wezterm.font("JetBrains Mono"),
     font = wezterm.font_with_fallback({"Iosevka Nerd Font Mono"},{foreground="#b0b0b0"}),
