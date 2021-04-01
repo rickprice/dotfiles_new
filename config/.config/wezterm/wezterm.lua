@@ -4,32 +4,32 @@ return {
   color_scheme="Adventure",
 
   -- font = wezterm.font("JetBrains Mono"),
-    font = wezterm.font_with_fallback({"Iosevka Thin"},{foreground="#b0b0b0"}),
+    font = wezterm.font_with_fallback({"Iosevka"}),
     font_size = 11.0,
     -- dpi = 96.0,
     font_dirs = {"/usr/share/fonts/TTF"},
     font_rules = {
         {
             italic = true,
-            font = wezterm.font_with_fallback({"Iosevka Italic"},{foreground="#b0b0b0"}),
+            font = wezterm.font_with_fallback({"Iosevka Italic"}),
         },
         {
             intensity = "Bold",
-            font = wezterm.font_with_fallback({"Iosevka Heavy"}, {foreground="#ffffff"}),
+            font = wezterm.font_with_fallback({"Iosevka Heavy"}),
         },
         {
             italic = true,
             intensity = "Bold",
-            font = wezterm.font_with_fallback({"Iosevka Heavy Italic"}, {foreground="#ffffff"}),
+            font = wezterm.font_with_fallback({"Iosevka Heavy Italic"}),
         },
         {
             intensity = "Half",
-            font = wezterm.font_with_fallback({"Iosevka Extralight"}, {foreground="#c0c0c0"}),
+            font = wezterm.font_with_fallback({"Iosevka Extralight"}),
         },
         {
             italic = true,
             intensity = "Half",
-            font = wezterm.font_with_fallback({"Iosevka Extralight Italic"}, {foreground="#c0c0c0"}),
+            font = wezterm.font_with_fallback({"Iosevka Extralight Italic"}),
         },
     },
     font_shaper = "Harfbuzz",
