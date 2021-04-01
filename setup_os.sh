@@ -59,6 +59,7 @@ yay --noconfirm -S aws-cli
 yay --noconfirm -S postgresql-libs # Needed for ActiveState BE tools
 yay --noconfirm -S nerd-fonts-complete
 yay --noconfirm -S wezterm-git
+yay --noconfirm -S ttf-iosevka-git
 
 ## Required for initial_setup.py
 # PyYaml is pulled in automatically via udiskie and it conflicts with the Pip version
@@ -124,8 +125,7 @@ rustup component add rustfmt
 rustup component add rls
 
 ## Alacritty
-yay --noconfirm -S alacritty
-yay --noconfirm -S ttf-iosevka
+# yay --noconfirm -S alacritty
 
 ## Keypass
 yay --noconfirm -S keepassxc
