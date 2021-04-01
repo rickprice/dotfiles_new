@@ -11,7 +11,7 @@ return {
     font_rules = {
         {
             italic = true,
-            font = wezterm.font_with_fallback({"Iosevka Nerd Font Mono Light Italic"},{foreground="#b0b0b0"}),
+            font = wezterm.font_with_fallback({"Iosevka Nerd Font Mono Italic"},{foreground="#b0b0b0"}),
         },
         {
             intensity = "Bold",
