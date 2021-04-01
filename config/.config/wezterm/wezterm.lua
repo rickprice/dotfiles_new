@@ -5,7 +5,7 @@ return {
 
   -- font = wezterm.font("JetBrains Mono"),
     font = wezterm.font_with_fallback({"Iosevka Nerd Font Mono"},{foreground="#b0b0b0"}),
-    font_size = 11.0,
+    font_size = 12.0,
     -- dpi = 96.0,
     font_dirs = {"/usr/share/fonts/nerd-fonts-complete"},
     font_rules = {
