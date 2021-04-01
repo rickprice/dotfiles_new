@@ -1,0 +1,5 @@
+export DB_USER="da_intervention"
+export DB_PASSWORD=$(pass show ActiveState/da-intervention/DB_PASSWORD)
+export DB_HOST="pgprod.activestate.build"
+export DB_NAME="data_acquisition"
+
