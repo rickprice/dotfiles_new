@@ -61,6 +61,7 @@ yay --noconfirm -S python-psycopg2 # Needed for DA importer go utilities
 yay --noconfirm -S nerd-fonts-complete
 yay --noconfirm -S wezterm-git
 yay --noconfirm -S ttf-iosevka-git
+yay --noconfirm -S darktable
 
 ## Required for initial_setup.py
 # PyYaml is pulled in automatically via udiskie and it conflicts with the Pip version
