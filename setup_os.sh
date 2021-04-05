@@ -58,6 +58,8 @@ yay --noconfirm -S meld
 yay --noconfirm -S aws-cli
 yay --noconfirm -S postgresql-libs # Needed for ActiveState BE tools
 yay --noconfirm -S python-psycopg2 # Needed for DA importer go utilities
+yay --noconfirm -S python-pipenv # Needed for BE tools
+yay --noconfirm -S pyenv # Needed for BE tools
 yay --noconfirm -S nerd-fonts-complete
 yay --noconfirm -S wezterm-git
 yay --noconfirm -S ttf-iosevka-git
