@@ -62,6 +62,7 @@ yay --noconfirm -S nerd-fonts-complete
 yay --noconfirm -S wezterm-git
 yay --noconfirm -S ttf-iosevka-git
 yay --noconfirm -S darktable
+yay --noconfirm -S digikam
 
 ## Required for initial_setup.py
 # PyYaml is pulled in automatically via udiskie and it conflicts with the Pip version
