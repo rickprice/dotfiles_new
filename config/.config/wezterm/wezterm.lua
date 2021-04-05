@@ -38,8 +38,8 @@ return {
     harfbuzz_features = {"kern", "liga", "clig", "calt"},
     font_antialias = "Greyscale",
     --font_antialias = "None",
-    --font_hinting = "Full",
-    font_hinting = "Vertical",
+    font_hinting = "Full",
+    -- font_hinting = "Vertical",
     --font_hinting = "VerticalSubpixel",
     --font_hinting = "None",
 }
