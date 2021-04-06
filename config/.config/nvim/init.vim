@@ -216,6 +216,9 @@ if is_nvim
     Plug 'antoinemadec/FixCursorHold.nvim'
 endif
 
+" Vim Diff tools
+Plug 'whiteinge/diffconflicts'
+
 " Colour Schemes
 " - Color support plugins
 " Clap (which is loaded) also has colorscheme switching
