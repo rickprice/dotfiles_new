@@ -233,6 +233,7 @@ Plug 'humanoid-colors/vim-humanoid-colorscheme'
 " Plug 'ParamagicDev/vim-medic_chalk'
 " Plug 'josegamez82/starrynight'
 Plug 'lewis6991/moonlight.vim'
+Plug 'nanotech/jellybeans.vim'
 
 " - Color plugins
 " Plug 'cseelus/vim-colors-lucid'
@@ -292,7 +293,8 @@ if &t_Co >= 256 && ($TERM isnot# 'xterm')
         " :silent! colorscheme koehler
         " :silent! colorscheme tender
         " :silent! colorscheme starrynight
-        :silent! colorscheme moonlight
+        " :silent! colorscheme moonlight
+        :silent! colorscheme jellybeans
         " :silent! colorscheme truedark
         " set airline theme
         " let g:airline_theme = 'tender'
@@ -307,6 +309,11 @@ endif
 " Hey Noah, this is for you...
 ":colorscheme dracula
 ":set background=dark
+
+" Jellybeans Setup
+let g:jellybeans_overrides = {
+\    'background': { 'guibg': '000000' },
+\}
 
 " ZFZ Setup
 nnoremap <silent> <C-p> :Files<CR>
