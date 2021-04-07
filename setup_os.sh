@@ -181,6 +181,9 @@ sudo systemctl enable tlp.service
 sudo systemctl enable NetworkManager-dispatcher.service
 sudo systemctl mask systemd-rfkill.service systemctl mask systemd-rfkill.socket
 
+# ActiveState tool
+sh <(curl -q https://platform.activestate.com/dl/cli/install.sh)
+
 #########################################################################################################3
 # if [ ! -f /.ssh/id_rsa.pub ]; then
 #     figlet "Have to create new SSH keys"
