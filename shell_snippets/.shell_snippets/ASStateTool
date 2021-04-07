@@ -1,0 +1,2 @@
+# Configuration required by the AS State Tool
+export PATH="~/.cache/activestate/bin:$PATH"
