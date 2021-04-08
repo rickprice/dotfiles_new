@@ -129,6 +129,9 @@ Plug 'wellle/targets.vim'
 
 Plug 'tommcdo/vim-exchange'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
+" Jump to line number preview
+Plug 'nacro90/numb.nvim'
+
 
 Plug 'pedrohdz/vim-yaml-folds'
 Plug 'vimwiki/vimwiki'
@@ -249,7 +252,6 @@ Plug 'nanotech/jellybeans.vim'
 
 "This is for you Noah
 " Plug 'dracula/vim', { 'as': 'dracula' }
-
 
 call plug#end()
 
@@ -509,6 +511,8 @@ set title                 " Update the title of your window or your terminal
 
 " Toggle line number display
 nnoremap <F2> :let [&nu, &rnu] = [!&rnu, &nu+&rnu==1]<cr>
+
+:lua require('numb').setup()
 
 " set guioptions=T          " Enable the toolbar
 
