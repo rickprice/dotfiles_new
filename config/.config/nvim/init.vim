@@ -512,7 +512,7 @@ set title                 " Update the title of your window or your terminal
 " Toggle line number display
 nnoremap <F2> :let [&nu, &rnu] = [!&rnu, &nu+&rnu==1]<cr>
 
-:lua require('numb').setup()
+lua require('numb').setup()
 
 " set guioptions=T          " Enable the toolbar
 
