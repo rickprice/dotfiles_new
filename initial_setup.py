@@ -112,7 +112,7 @@ def main() -> None:
     print("Creating files if they don't exist")
     write_gitconfig_file(home_directory, data)
     write_aws_config_file(home_directory, data)
-    write_aws_credentials_file(home_directory, data)
+    # write_aws_credentials_file(home_directory, data)
     write_dotconfig_hub_file(home_directory, data)
     write_dotcamel_file(home_directory, data)
     write_pr_user_file(home_directory, data)
