@@ -5,7 +5,7 @@ return {
   color_scheme="Jellybeans",
 
   -- font = wezterm.font("JetBrains Mono"),
-    font = wezterm.font_with_fallback({"Iosevka"}),
+    font = wezterm.font_with_fallback({"Iosevka","JetBrainsMono"}),
     font_size = 11.0,
     -- dpi = 96.0,
     font_dirs = {"/usr/share/fonts/TTF"},
