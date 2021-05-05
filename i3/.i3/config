@@ -220,6 +220,7 @@ bindsym $mod+Shift+F12 move container to workspace $ws9; workspace $ws9
 # assign [class="Skype"] $ws5
 
 assign [class="zoom"] $ws9
+# for_window [class="zoom"] move container to workspace $ws9
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
@@ -262,6 +263,10 @@ bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# move focused workspace between monitors
+bindsym $mod+Ctrl+greater move workspace to output right
+bindsym $mod+Ctrl+less move workspace to output left
 
 # Set shut down, restart and locking features
 bindsym $mod+0 mode "$mode_system"
