@@ -219,6 +219,8 @@ bindsym $mod+Shift+F12 move container to workspace $ws9; workspace $ws9
 # assign [class="Pcmanfm"] $ws3
 # assign [class="Skype"] $ws5
 
+assign [class="zoom"] $ws9
+
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
 for_window [class="calamares"] floating enable border normal
