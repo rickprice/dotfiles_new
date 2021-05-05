@@ -117,6 +117,16 @@ sudo systemctl start cups.service
 sudo pacman --noconfirm -S cups system-config-printer
 lpadmin -p MFC-L2700DW -E -v "ipp://$PRINTER_IP/ipp/print" -m everywhere
 
+
+# Setup Epson ET-2720 printer
+sudo pacman -Sy patch
+yay -S epson-inkjet-printer-escpr
+sudo pacman -Sy cups cups-pdf
+sudo gpasswd -a `whoami` lp
+sudo gpasswd -a `whoami` lpadmin
+sudo systemctl start org.cups.cupsd.service
+sudo systemctl enable org.cups.cupsd.service
+
 ## X11 stuff
 sudo pacman --noconfirm -S xcape
 
