@@ -71,6 +71,9 @@ yay --noconfirm -S rawtherapee
 yay --noconfirm -S gimp
 yay --noconfirm -S perl-image-exiftool
 
+# Ensure we have my favourite file manager and the thumbnailers it needs
+yay --noconfirm -S pcmanfm tumbler poppler-glib ffmpegthumbnailer freetype2 libgsf raw-thumbnailer ufraw-thumbnailer
+
 ## Required for initial_setup.py
 # PyYaml is pulled in automatically via udiskie and it conflicts with the Pip version
 # sudo pip install PyYAML
