@@ -71,6 +71,9 @@ yay --noconfirm -S rawtherapee
 yay --noconfirm -S gimp
 yay --noconfirm -S perl-image-exiftool
 
+# Moving files to and from DropBox
+yay --noconfirm -S rclone
+
 # Ensure we have my favourite file manager and the thumbnailers it needs
 yay --noconfirm -S pcmanfm tumbler poppler-glib ffmpegthumbnailer freetype2 libgsf raw-thumbnailer ufraw-thumbnailer
 
