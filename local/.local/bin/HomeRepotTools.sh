@@ -7,9 +7,9 @@ export PERL_USE_UNSAFE_INC=1
 export PERL5LIB=$CAMEL_ROOT/build/lib:$CAMEL_ROOT/local/lib/perl5:$PERL5LIB
 export PATH=$CAMEL_ROOT/vendor/bin:$CAMEL_ROOT/local/bin:$PATH
 
-alias camel='cd ~/camel;docker run -it -v $(pwd):/camel camel-work /bin/bash'
-alias centos6='cd ~/camel;docker run -it -v /storage:/storage activestate/centos-6.9-build /bin/bash'
-alias centos7='cd ~/camel;docker run -it -v /storage:/storage activestate/centos-7.6-build /bin/bash'
+alias camel='cd ~/camel;docker run -it -v $(pwd):/camel camel-work /usr/bin/sh'
+alias centos6='cd ~/camel;docker run -it -v /storage:/storage activestate/centos-6.9-build /usr/bin/sh'
+alias centos7='cd ~/camel;docker run -it -v /storage:/storage activestate/centos-7.6-build /usr/bin/sh'
 alias prune='docker system prune'
 #alias rebase='/home/marcg/scripts/rebase.sh'
 #alias scanner='cd /home/marcg/TheHomeRepot/service/pythonscanner'

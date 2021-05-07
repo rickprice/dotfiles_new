@@ -555,7 +555,7 @@ def write_pr_user_file(home_directory: Path, configuration: Any) -> None:
     code_signing_cert = configuration["activestate"]["code_signing_cert"]
 
     contents = f"""
-    #!/bin/bash -f
+    #!/usr/bin/sh -f
 
     export AS_USER={user}
     export CODE_SIGNING_PASSWD={code_signing_password}
