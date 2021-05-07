@@ -63,13 +63,12 @@ yay --noconfirm -S pyenv # Needed for BE tools
 yay --noconfirm -S nerd-fonts-complete
 yay --noconfirm -S wezterm-git
 yay --noconfirm -S ttf-iosevka-git
-yay --noconfirm -S darktable
-yay --noconfirm -S digikam
 
 # Photographic processing
 yay --noconfirm -S rawtherapee
 yay --noconfirm -S gimp
 yay --noconfirm -S perl-image-exiftool
+yay --noconfirm -S nomacs
 
 # Moving files to and from DropBox
 yay --noconfirm -S rclone
