@@ -523,6 +523,8 @@ set smartcase             " If there is an uppercase in your search term
 set incsearch             " Highlight search results when typing
 set hlsearch              " Highlight search results
 
+set nowrapscan            " Don't wrap around, use ggn to start over
+
 " -- Beep
 set visualbell            " Prevent Vim from beeping
 set noerrorbells          " Prevent Vim from beeping
