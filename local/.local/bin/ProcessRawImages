@@ -1,0 +1,32 @@
+#! /usr/bin/sh
+
+# Fail script if any command fails
+set -e
+
+## keep track of the last executed command
+trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
+## echo an error message before exiting
+trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
+
+WORKING_DIR=.
+DROPBOX_DIR=./SendToDropBox
+GOOGLEPHOTOS_DIR=./SendToGooglePhotos
+LOCATION_HISTORY_FILE="Takeout/Location History/Location History.kml"
+
+pushd .
+
+cd $WORKING_DIR 
+
+mkdir -p $DROPBOX_DIR
+mkdir -p $GOOGLEPHOTOS_DIR
+
+exiftool -geotag "$LOCATION_HISTORY_FILE" '-geotime<${DateTimeOriginal}-04:00' . -api GeoMaxIntSecs=1800 -out $DROPBOX_DIR
+
+# Convert files in batch mode using default parameters
+rawtherapee-cli -d -o $GOOGLEPHOTOS_DIR -c $DROPBOX_DIR
+
+# Move RAW files to DropBox
+rclone move $DROPBOX_DIR" Dropbox:Pictures/CanonRawPhotos
+
+# Move JPEG files to Google Photos
+rclone move $GOOGLEPHOTOS_DIR GooglePhotos:upload
