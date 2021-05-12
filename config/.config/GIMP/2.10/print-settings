@@ -1,0 +1,17 @@
+[meta]
+major-version=0
+minor-version=4
+
+[print-settings]
+print-pages=all
+collate=false
+scale=100
+page-set=all
+printer=default
+reverse=false
+
+[image-setup]
+unit=2
+center-mode=3
+use-full-page=false
+crop-marks=false

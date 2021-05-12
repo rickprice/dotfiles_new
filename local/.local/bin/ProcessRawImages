@@ -13,20 +13,22 @@ DROPBOX_DIR=./SendToDropBox
 GOOGLEPHOTOS_DIR=./SendToGooglePhotos
 LOCATION_HISTORY_FILE="Takeout/Location History/Location History.kml"
 
-pushd .
-
 cd $WORKING_DIR 
 
 mkdir -p $DROPBOX_DIR
 mkdir -p $GOOGLEPHOTOS_DIR
 
+echo Adding Geolocation data to RAW photos
 exiftool -geotag "$LOCATION_HISTORY_FILE" '-geotime<${DateTimeOriginal}-04:00' . -api GeoMaxIntSecs=1800 -out $DROPBOX_DIR
 
+echo Converting RAW photos to JGEG
 # Convert files in batch mode using default parameters
 rawtherapee-cli -d -o $GOOGLEPHOTOS_DIR -c $DROPBOX_DIR
 
+echo Moving RAW photos to DropBox
 # Move RAW files to DropBox
-rclone move $DROPBOX_DIR" Dropbox:Pictures/CanonRawPhotos
+rclone move "$DROPBOX_DIR" Dropbox:Pictures/CanonRawPhotos
 
+echo Moving JPEG photos to Google Photos
 # Move JPEG files to Google Photos
-rclone move $GOOGLEPHOTOS_DIR GooglePhotos:upload
+rclone move "$GOOGLEPHOTOS_DIR" GooglePhotos:upload

@@ -1,0 +1,85 @@
+#PRINTRCv5 written by Gutenprint 5.3.4 - 06 Dec 2020
+
+Global-Settings:
+  Current-Printer: "Epson"
+  Show-All-Paper-Sizes: False
+  PrintCommand ""
+  QueueSelect ""
+  RawOutputFlag ""
+  ScanPrintersCommand ""
+  PrintingSystem "Autodetect"
+  ScanOnStartup "False"
+End-Global-Settings:
+
+Printer: "Printer" "ps2"
+  Command-Type: 0
+  Queue-Name: ""
+  Output-Filename: ""
+  Extra-Printer-Options: ""
+  Custom-Command: ""
+  Scaling: 100.000000
+  Orientation: -1
+  Autosize-Roll-Paper: 0
+  Unit: 0
+  Left: 0.000000
+  Top: 0.000000
+  Custom_Page_Width: 0.000000
+  Custom_Page_Height: 0.000000
+  Parameter STPUICopyCount Int True 1
+  Parameter PageSize String True "Letter"
+  Parameter PrintingMode String True "Color"
+  Parameter ColorCorrection String True "None"
+  Parameter ChannelBitDepth String True "8"
+  Parameter InputImageType String True "RGB"
+  Parameter Brightness Double True 1.000000
+  Parameter Contrast Double True 1.000000
+  Parameter LinearContrast Boolean True False
+  Parameter Saturation Double True 1.000000
+  Parameter Quality String True "Standard"
+  Parameter ImageType String True "TextGraphics"
+  Parameter JobMode String True "Page"
+
+Printer: "Epson" "escp2-et2700"
+  Command-Type: 0
+  Queue-Name: "EPSON-ET-2720-Series"
+  Output-Filename: ""
+  Extra-Printer-Options: ""
+  Custom-Command: ""
+  Scaling: 100.000000
+  Orientation: -1
+  Autosize-Roll-Paper: 0
+  Unit: 0
+  Left: 9.000000
+  Top: 0.000000
+  Custom_Page_Width: 612.000000
+  Custom_Page_Height: 792.000000
+  Parameter STPUICopyCount Int True 1
+  Parameter DitherAlgorithm String True "None"
+  Parameter Quality String True "Standard"
+  Parameter PageSize String True "Letter"
+  Parameter MediaType String True "Plain"
+  Parameter InputSlot String True "Standard"
+  Parameter CDInnerRadius String True "Standard"
+  Parameter CDOuterDiameter Dimension True 329.000000
+  Parameter CDInnerDiameter Dimension True 121.000000
+  Parameter CDXAdjustment Dimension True 0.000000
+  Parameter CDYAdjustment Dimension True 0.000000
+  Parameter CDAllowOtherMedia Boolean True False
+  Parameter Resolution String True "None"
+  Parameter InkType String True "None"
+  Parameter UseGloss Boolean True False
+  Parameter InkSet String True "None"
+  Parameter PrintingDirection String True "None"
+  Parameter FullBleed Boolean True False
+  Parameter Weave String True "None"
+  Parameter OutputOrder String False "Standard"
+  Parameter PrintingMode String True "Color"
+  Parameter ColorCorrection String True "None"
+  Parameter ChannelBitDepth String True "8"
+  Parameter InputImageType String True "RGB"
+  Parameter Brightness Double True 1.000000
+  Parameter Contrast Double True 1.000000
+  Parameter LinearContrast Boolean True False
+  Parameter Saturation Double True 1.000000
+  Parameter ImageType String True "TextGraphics"
+  Parameter JobMode String True "Page"
