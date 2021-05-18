@@ -25,10 +25,20 @@ echo Converting RAW photos to JGEG
 # Convert files in batch mode using default parameters
 rawtherapee-cli -d -o $GOOGLEPHOTOS_DIR -c $DROPBOX_DIR
 
-echo Moving RAW photos to DropBox
+# Remember we may need to enter password
+figlet -k DropBox, You may need to enter passwword
+
 # Move RAW files to DropBox
+echo Moving RAW photos to DropBox
 rclone move "$DROPBOX_DIR" Dropbox:Pictures/CanonRawPhotos
 
-echo Moving JPEG photos to Google Photos
+# Remember we may need to enter password
+figlet -k Google Photos, You may need to enter passwword
+
 # Move JPEG files to Google Photos
+echo Moving JPEG photos to Google Photos
 rclone move "$GOOGLEPHOTOS_DIR" GooglePhotos:upload
+
+# Start terminal to watch the pipeline
+terminal -e watch --interval 120 "ls SendToDropBox SendToGooglePhotos | wc --lines | figlet -k"
+
