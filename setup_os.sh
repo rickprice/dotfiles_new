@@ -80,6 +80,9 @@ yay --noconfirm -S nomacs
 # Moving files to and from DropBox
 yay --noconfirm -S rclone
 
+# For handling Magnet and BitTorrent links
+yay --noconfirm -S tixati
+
 # Ensure we have my favourite file manager and the thumbnailers it needs
 yay --noconfirm -S pcmanfm tumbler poppler-glib ffmpegthumbnailer freetype2 libgsf raw-thumbnailer ufraw-thumbnailer
 
