@@ -40,5 +40,5 @@ echo Moving JPEG photos to Google Photos
 rclone move "$GOOGLEPHOTOS_DIR" GooglePhotos:upload
 
 # Start terminal to watch the pipeline
-terminal -e watch --interval 120 "ls SendToDropBox SendToGooglePhotos | wc --lines | figlet -k"
+terminal -e watch --interval 120 "ls --format=single-column SendToDropBox SendToGooglePhotos | wc --lines | figlet -k"
 

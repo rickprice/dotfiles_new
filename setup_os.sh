@@ -194,7 +194,7 @@ sudo usermod -aG vboxusers $USER
 yay --noconfirm -S virtualbox virtualbox-guest-iso virtualbox-ext-oracle
 
 # Setup mirrors better
-# sudo pacman-mirrors -c Canada
+# sudo pacman-mirrors -c Canada,United_States
 sudo pacman-mirrors -c all
 sudo pacman -Syyu
 yay -Syyu
