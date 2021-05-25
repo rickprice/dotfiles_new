@@ -238,7 +238,7 @@ Plug 'humanoid-colors/vim-humanoid-colorscheme'
 " Plug 'tpope/vim-vividchalk'
 " Plug 'ParamagicDev/vim-medic_chalk'
 " Plug 'josegamez82/starrynight'
-Plug 'lewis6991/moonlight.vim'
+" Plug 'lewis6991/moonlight.vim'
 Plug 'nanotech/jellybeans.vim'
 
 " - Color plugins
