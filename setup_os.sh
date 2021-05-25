@@ -14,7 +14,7 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 sudo pacman --noconfirm -Syu
 
 # Install Yay
-sudo pacman -S --needed git base-devel
+sudo pacman --noconfirm -S --needed git base-devel
 git clone https://aur.archlinux.org/yay.git
 pushd .
 cd yay
@@ -67,7 +67,7 @@ yay --noconfirm -S postgresql-libs # Needed for ActiveState BE tools
 yay --noconfirm -S python-psycopg2 # Needed for DA importer go utilities
 yay --noconfirm -S python-pipenv # Needed for BE tools
 yay --noconfirm -S pyenv # Needed for BE tools
-yay --noconfirm -S nerd-fonts-complete
+# yay --noconfirm -S nerd-fonts-complete
 yay --noconfirm -S wezterm-git
 yay --noconfirm -S ttf-iosevka-git
 
