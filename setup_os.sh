@@ -13,8 +13,15 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 ## Upgrade everything
 sudo pacman --noconfirm -Syu
 
+# Install Yay
+sudo pacman -S --needed git base-devel
+git clone https://aur.archlinux.org/yay.git
+pushd .
+cd yay
+makepkg -si
+popd
+
 ## Install Main packages I want
-sudo pacman --noconfirm -S yay
 sudo pacman --noconfirm -S base-devel
 sudo pacman --noconfirm -S stow
 sudo pacman --noconfirm -S python
