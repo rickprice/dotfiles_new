@@ -18,6 +18,9 @@ cd $WORKING_DIR
 mkdir -p $DROPBOX_DIR
 mkdir -p $GOOGLEPHOTOS_DIR
 
+# Start terminal to watch the pipeline
+terminal -e watch --interval 120 "ls --format=single-column SendToDropBox SendToGooglePhotos | wc --lines | figlet -k"
+
 echo Adding Geolocation data to RAW photos
 exiftool -geotag "$LOCATION_HISTORY_FILE" '-geotime<${DateTimeOriginal}-04:00' . -api GeoMaxIntSecs=1800 -out $DROPBOX_DIR
 
@@ -38,7 +41,3 @@ figlet -k Google Photos, You may need to enter passwword
 # Move JPEG files to Google Photos
 echo Moving JPEG photos to Google Photos
 rclone move "$GOOGLEPHOTOS_DIR" GooglePhotos:upload
-
-# Start terminal to watch the pipeline
-terminal -e watch --interval 120 "ls --format=single-column SendToDropBox SendToGooglePhotos | wc --lines | figlet -k"
-
