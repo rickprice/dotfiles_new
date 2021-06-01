@@ -89,6 +89,9 @@ yay --noconfirm -S pcmanfm tumbler poppler-glib ffmpegthumbnailer freetype2 libg
 # EBook support
 yay --noconfirm -S calibre
 
+# Markdown preview (and others) in terminal
+yay --noconfirm -S bat
+
 ## Required for initial_setup.py
 # PyYaml is pulled in automatically via udiskie and it conflicts with the Pip version
 # sudo pip install PyYAML
