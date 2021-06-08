@@ -219,6 +219,3 @@ sudo systemctl mask systemd-rfkill.service systemctl mask systemd-rfkill.socket
 
 # ActiveState tool
 sh <(curl -q https://platform.activestate.com/dl/cli/install.sh)
-
-# ActiveState
-yay --noconfirm -S prettier
