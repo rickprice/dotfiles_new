@@ -224,3 +224,8 @@ sh <(curl -q https://platform.activestate.com/dl/cli/install.sh)
 yay --noconfirm -S yarn
 yay --noconfirm -S node
 yay --noconfirm -S prettier
+
+# Video
+yay --noconfirm -S vlc
+yay --noconfirm -S flowblade
+
