@@ -36,8 +36,8 @@ echo Moving RAW photos to DropBox
 rclone move "$DROPBOX_DIR" Dropbox:Pictures/CanonRawPhotos
 
 # Remember we may need to enter password
-figlet -k Google Photos, You may need to enter passwword
+# figlet -k Google Photos, You may need to enter passwword
 
 # Move JPEG files to Google Photos
 echo Moving JPEG photos to Google Photos
-rclone move "$GOOGLEPHOTOS_DIR" GooglePhotos:upload
+# rclone move "$GOOGLEPHOTOS_DIR" GooglePhotos:upload
