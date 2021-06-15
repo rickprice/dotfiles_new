@@ -140,6 +140,9 @@ Plug 'mattn/calendar-vim'
 " For handling marks
 Plug 'kshenoy/vim-signature'
 
+" For handling root files
+Plug 'lambdalisue/suda.vim'
+
 "UltiSnips engine
 if g:has_python3 || g:is_nvim5
     " Track the engine.
@@ -584,7 +587,9 @@ map <leader>w :call ToggleWrap()<CR>
 noremap <F3> :set list!<CR>
 
 " :w!! to save with sudo
-ca w!! w !sudo -S tee >/dev/null "%"
+" ca w!! w !sudo -S tee >/dev/null "%"
+" Suda plugin, which replaces the above
+let g:suda_smart_edit = 1 
 
 " Insert current date or date and time in insert mode
 iabbrev <silent> dst <C-R>=strftime("%Y-%m-%d")<cr>

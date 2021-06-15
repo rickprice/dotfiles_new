@@ -224,6 +224,10 @@ sh <(curl -q https://platform.activestate.com/dl/cli/install.sh)
 yay --noconfirm -S yarn
 yay --noconfirm -S node
 yay --noconfirm -S prettier
+yay --noconfirm -S jq
+yay --noconfirm -S python37
+yay --noconfirm -S python-black
+yay --noconfirm -S python-isort
 
 # Video
 yay --noconfirm -S vlc
