@@ -76,6 +76,7 @@ yay --noconfirm -S rawtherapee
 yay --noconfirm -S gimp
 yay --noconfirm -S perl-image-exiftool
 yay --noconfirm -S nomacs
+yay --noconfirm -S imagemagick
 
 # Moving files to and from DropBox
 yay --noconfirm -S rclone

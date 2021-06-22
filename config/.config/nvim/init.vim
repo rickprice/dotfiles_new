@@ -85,6 +85,25 @@ else
     endif
 endif
 
+" Git Gutter Plugin
+Plug 'airblade/vim-gitgutter'
+" Use fontawesome icons as signs
+" Use fontawesome icons as signs
+let g:gitgutter_sign_added = ''
+let g:gitgutter_sign_modified = ''
+let g:gitgutter_sign_removed = ''
+let g:gitgutter_sign_removed_first_line = ''
+let g:gitgutter_sign_modified_removed = ''
+let g:gitgutter_override_sign_column_highlight = 1
+" highlight SignColumn guibg=bg
+" highlight SignColumn ctermbg=bg
+" Jump between hunks
+nmap <Leader>gn <Plug>(GitGutterNextHunk)  " git next
+nmap <Leader>gp <Plug>(GitGutterPrevHunk)  " git previous
+" Hunk-add and hunk-revert for chunk staging
+nmap <Leader>ga <Plug>(GitGutterStageHunk)  " git add (chunk)
+nmap <Leader>gu <Plug>(GitGutterUndoHunk)   " git undo (chunk)
+
 Plug 'rust-lang/rust.vim', { 'for' : 'rust' }
 Plug 'Yggdroot/indentLine'
 Plug 'junegunn/vim-plug'
@@ -340,7 +359,8 @@ let g:gist_token=$GIST_TOKEN
 
 " CoC Setup
 if g:use_coc
-    let g:coc_global_extensions = ['coc-pyright', 'coc-yaml', 'coc-json', 'coc-git', 'coc-docker', 'coc-markdownlint', 'coc-perl', 'coc-sh', 'coc-fzf-preview', 'coc-spell-checker','coc-tsserver', 'coc-rls', 'coc-ultisnips']
+    " let g:coc_global_extensions = ['coc-pyright', 'coc-yaml', 'coc-json', 'coc-git', 'coc-docker', 'coc-markdownlint', 'coc-perl', 'coc-sh', 'coc-fzf-preview', 'coc-spell-checker','coc-tsserver', 'coc-rls', 'coc-ultisnips']
+    let g:coc_global_extensions = ['coc-pyright', 'coc-yaml', 'coc-json', 'coc-docker', 'coc-markdownlint', 'coc-perl', 'coc-sh', 'coc-fzf-preview', 'coc-spell-checker','coc-tsserver', 'coc-rls', 'coc-ultisnips']
 
     " TextEdit might fail if hidden is not set.
     set hidden
