@@ -104,12 +104,31 @@ nmap <Leader>gp <Plug>(GitGutterPrevHunk)  " git previous
 nmap <Leader>ga <Plug>(GitGutterStageHunk)  " git add (chunk)
 nmap <Leader>gu <Plug>(GitGutterUndoHunk)   " git undo (chunk)
 
+" Git Plugin
+Plug 'jreybert/vimagit'
+" Open vimagit pane
+nnoremap <leader>gs :Magit<CR>       " git status
+" Push to remote
+nnoremap <leader>gP :! git push<CR>  " git Push
+" Enable deletion of untracked files in Magit
+"let g:magit_discard_untracked_do_delete=1
+
 Plug 'rust-lang/rust.vim', { 'for' : 'rust' }
 Plug 'Yggdroot/indentLine'
 Plug 'junegunn/vim-plug'
 Plug 'vim-airline/vim-airline'
 
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+" Show commits for every source line
+nnoremap <Leader>gb :Gblame<CR>  " git blame
+" Open current line in the browser
+nnoremap <Leader>gb :.Gbrowse<CR>
+" Open visual selection in the browser
+vnoremap <Leader>gb :Gbrowse<CR>
+" Add the entire file to the staging area
+nnoremap <Leader>gaf :Gw<CR>      " git add file
+
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
