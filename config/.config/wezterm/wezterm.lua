@@ -4,35 +4,10 @@ return {
   -- color_scheme="Adventure",
   color_scheme="Jellybeans",
 
-  -- font = wezterm.font("JetBrains Mono"),
-    font = wezterm.font_with_fallback({"Iosevka","JetBrainsMono"}),
+    font = wezterm.font_with_fallback({"Iosevka","JetBrains Mono"}),
     font_size = 11.0,
     -- dpi = 96.0,
     font_dirs = {"/usr/share/fonts/TTF"},
-    font_rules = {
-        {
-            italic = true,
-            font = wezterm.font_with_fallback({"Iosevka Italic"}),
-        },
-        {
-            intensity = "Bold",
-            font = wezterm.font_with_fallback({"Iosevka Heavy"}),
-        },
-        {
-            italic = true,
-            intensity = "Bold",
-            font = wezterm.font_with_fallback({"Iosevka Heavy Italic"}),
-        },
-        {
-            intensity = "Half",
-            font = wezterm.font_with_fallback({"Iosevka Extralight"}),
-        },
-        {
-            italic = true,
-            intensity = "Half",
-            font = wezterm.font_with_fallback({"Iosevka Extralight Italic"}),
-        },
-    },
     font_shaper = "Harfbuzz",
     --font_shaper = "Allsorts",
     --font_antialias = "Subpixel",

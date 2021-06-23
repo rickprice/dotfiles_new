@@ -550,6 +550,8 @@ syntax on " Turn on syntax highlighing
 set title                 " Update the title of your window or your terminal
 " set number                " Display line numbers
 " set ruler                 " Display cursor position
+" Set marker so we know the maximum line length we should use
+set colorcolumn=100
 
 " Toggle line number display
 nnoremap <F2> :let [&nu, &rnu] = [!&rnu, &nu+&rnu==1]<cr>
