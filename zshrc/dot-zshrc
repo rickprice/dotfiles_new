@@ -112,7 +112,3 @@ source_files_in() {
 }
 
 source_files_in ~/.shell_snippets
-# +++ NOTICE THIS +++ This has been added from the base configuration to load other configuration
-# -- START ACTIVESTATE DEFAULT RUNTIME ENVIRONMENT
-export PATH="/home/fprice/.cache/activestate/bin:$PATH"
-# -- STOP ACTIVESTATE DEFAULT RUNTIME ENVIRONMENT

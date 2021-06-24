@@ -22,7 +22,7 @@ mkdir -p $GOOGLEPHOTOS_DIR
 terminal -e watch --interval 120 "ls --format=single-column SendToDropBox SendToGooglePhotos | wc --lines | figlet -k"
 
 echo Adding Geolocation data to RAW photos
-exiftool -geotag "$LOCATION_HISTORY_FILE" '-geotime<${DateTimeOriginal}-04:00' . -api GeoMaxIntSecs=1800 -out $DROPBOX_DIR
+# exiftool -geotag "$LOCATION_HISTORY_FILE" '-geotime<${DateTimeOriginal}-04:00' . -api GeoMaxIntSecs=1800 -out $DROPBOX_DIR
 
 echo Converting RAW photos to JGEG
 # Convert files in batch mode using default parameters
