@@ -2,10 +2,10 @@
 source ~/.local/bin/set_as_config.sh
 
 # Camel setup stuff
-export CAMEL_ROOT=~/camel
-export PERL_USE_UNSAFE_INC=1
-export PERL5LIB=$CAMEL_ROOT/build/lib:$CAMEL_ROOT/local/lib/perl5:$PERL5LIB
-export PATH=$CAMEL_ROOT/vendor/bin:$CAMEL_ROOT/local/bin:$PATH
+# export CAMEL_ROOT=~/camel
+# export PERL_USE_UNSAFE_INC=1
+# export PERL5LIB=$CAMEL_ROOT/build/lib:$CAMEL_ROOT/local/lib/perl5:$PERL5LIB
+# export PATH=$CAMEL_ROOT/vendor/bin:$CAMEL_ROOT/local/bin:$PATH
 
 alias camel='cd ~/camel;docker run -it -v $(pwd):/camel camel-work /usr/bin/sh'
 alias centos6='cd ~/camel;docker run -it -v /storage:/storage activestate/centos-6.9-build /usr/bin/sh'
@@ -16,7 +16,7 @@ alias prune='docker system prune'
 #alias fusebox='ssh -i ~/.ssh/kc-aws ec2-user@fusebox.activestate.build'
 alias bet='cd ~/TheHomeRepot/lib/python/ActiveStatePlatform'
 alias ripenv='pipenv --rm && pipenv install --dev'
-alias tidyall='~/perl5/perlbrew/perls/perl-5.26.1/bin/tidyall'
+# alias tidyall='~/perl5/perlbrew/perls/perl-5.26.1/bin/tidyall'
 
 function be() { cd ~/TheHomeRepot/lib/python; pipenv shell; }
 
