@@ -43,7 +43,7 @@ else
 fi
 
 # Start terminal to watch the pipeline
-# terminal -e watch --interval 120 "ls --format=single-column $DROPBOX_UPLOAD_DIR $ORIGINAL_GOOGLE_PHOTOS_RAWS_UPLOAD_DIR| wc --lines | figlet -k"
+terminal -e watch --interval 120 "ls --format=single-column $DROPBOX_UPLOAD_DIR $ORIGINAL_GOOGLE_PHOTOS_RAWS_UPLOAD_DIR| wc --lines | figlet -k"
 
 figlet Step 4: Copy original RAW files to staging
 rsync $ORIGINAL_RAWS_DIR/* $DROPBOX_UPLOAD_DIR
