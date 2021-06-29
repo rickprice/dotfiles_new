@@ -67,9 +67,15 @@ yay --noconfirm -S postgresql-libs # Needed for ActiveState BE tools
 yay --noconfirm -S python-psycopg2 # Needed for DA importer go utilities
 yay --noconfirm -S python-pipenv # Needed for BE tools
 yay --noconfirm -S pyenv # Needed for BE tools
-# yay --noconfirm -S nerd-fonts-complete
 yay --noconfirm -S wezterm-git
+# Fonts
+yay --noconfirm -S xorg-xfontsel
+# yay --noconfirm -S nerd-fonts-complete
 yay --noconfirm -S ttf-iosevka-git
+yay --noconfirm -S noto-fonts
+yay --noconfirm -S noto-fonts-emoji
+yay --noconfirm -S noto-fonts-extra
+yay --noconfirm -S ttf-linux-libertine
 
 # Photographic processing
 yay --noconfirm -S rawtherapee

@@ -8,36 +8,66 @@ trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
 ## echo an error message before exiting
 trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
+# Setup where everything goes
+DOWNLOADS_DIR=~/Downloads
+DROPBOX_UPLOAD_DIR=./SendToDropBox
+GOOGLE_PHOTOS_JPEG_UPLOAD_DIR=./SendToGooglePhotos
+GOOGLE_TAKEOUT_DIR=./Takeout
+LOCATION_HISTORY_FILE="$GOOGLE_TAKEOUT_DIR/Location History/Location History.kml"
+ORIGINAL_GOOGLE_PHOTOS_RAWS=./GooglePhotosRaws
+ORIGINAL_GOOGLE_PHOTOS_RAWS_UPLOAD_DIR=./GooglePhotosRawsUpload
+ORIGINAL_RAWS_DIR=./Original_Raws
 WORKING_DIR=.
-DROPBOX_DIR=./SendToDropBox
-GOOGLEPHOTOS_DIR=./SendToGooglePhotos
-LOCATION_HISTORY_FILE="Takeout/Location History/Location History.kml"
 
 cd $WORKING_DIR 
 
-mkdir -p $DROPBOX_DIR
-mkdir -p $GOOGLEPHOTOS_DIR
+figlet Step 1: Clear out existing data
+rm -rf $DROPBOX_UPLOAD_DIR
+rm -rf $GOOGLE_PHOTOS_JPEG_UPLOAD_DIR
+rm -rf $GOOGLE_TAKEOUT_DIR
+rm -rf $ORIGINAL_GOOGLE_PHOTOS_RAWS_UPLOAD_DIR
+
+figlet Step 2: Ensure our directories exist
+mkdir -p $DROPBOX_UPLOAD_DIR
+mkdir -p $GOOGLE_PHOTOS_JPEG_UPLOAD_DIR
+mkdir -p $ORIGINAL_GOOGLE_PHOTOS_RAWS
+mkdir -p $ORIGINAL_GOOGLE_PHOTOS_RAWS_UPLOAD_DIR
+mkdir -p $ORIGINAL_RAWS_DIR
+
+figlet Step 3: Setup Google Takeout data
+if [[ $(find $DOWNLOADS_DIR -maxdepth 1 -name 'takeout-*' -printf c | wc -c) == "1" ]]; then
+    tar -xzf $DOWNLOADS_DIR/takeout-*
+else
+    figlet Too many or too few takeout location zip files
+    exit -1
+fi
 
 # Start terminal to watch the pipeline
-terminal -e watch --interval 120 "ls --format=single-column SendToDropBox SendToGooglePhotos | wc --lines | figlet -k"
+# terminal -e watch --interval 120 "ls --format=single-column $DROPBOX_UPLOAD_DIR $ORIGINAL_GOOGLE_PHOTOS_RAWS_UPLOAD_DIR| wc --lines | figlet -k"
 
-echo Adding Geolocation data to RAW photos
-# exiftool -geotag "$LOCATION_HISTORY_FILE" '-geotime<${DateTimeOriginal}-04:00' . -api GeoMaxIntSecs=1800 -out $DROPBOX_DIR
+figlet Step 4: Copy original RAW files to staging
+rsync $ORIGINAL_RAWS_DIR/* $DROPBOX_UPLOAD_DIR
+rsync --ignore-missing-args $ORIGINAL_GOOGLE_PHOTOS_RAWS/* $ORIGINAL_GOOGLE_PHOTOS_RAWS_UPLOAD_DIR
 
-echo Converting RAW photos to JGEG
+figlet Step 5: Geotag photos
+exiftool -geotag "$LOCATION_HISTORY_FILE" '-geotime<${DateTimeOriginal}-04:00' . -api GeoMaxIntSecs=1800 -overwrite_original_in_place $DROPBOX_UPLOAD_DIR/*
+[ "$(ls -A $ORIGINAL_GOOGLE_PHOTOS_RAWS_UPLOAD_DIR)" ] && exiftool -geotag "$LOCATION_HISTORY_FILE" '-geotime<${DateTimeOriginal}-04:00' . -api GeoMaxIntSecs=1800 -overwrite_original_in_place $ORIGINAL_GOOGLE_PHOTOS_RAWS_UPLOAD_DIR/*
+
+figlet Step 6: Convert photos going to Google to JPEG
 # Convert files in batch mode using default parameters
-rawtherapee-cli -d -o $GOOGLEPHOTOS_DIR -c $DROPBOX_DIR
+[ "$(ls -A $ORIGINAL_GOOGLE_PHOTOS_RAWS_UPLOAD_DIR)" ] && rawtherapee-cli -d -o $GOOGLE_PHOTOS_JPEG_UPLOAD_DIR -c $ORIGINAL_GOOGLE_PHOTOS_RAWS_UPLOAD_DIR
 
 # Remember we may need to enter password
 figlet -k DropBox, You may need to enter passwword
 
-# Move RAW files to DropBox
-echo Moving RAW photos to DropBox
-rclone move "$DROPBOX_DIR" Dropbox:Pictures/CanonRawPhotos
+figlet Step 7: Upload RAW files to Dropbox
+rclone move "$DROPBOX_UPLOAD_DIR" Dropbox:Pictures/CanonRawPhotos
+rclone move "$ORIGINAL_GOOGLE_PHOTOS_RAWS_UPLOAD_DIR" Dropbox:Pictures/CanonRawPhotos
 
+figlet Step 8: You now need to manually upload the photos going to Google Photos
 # Remember we may need to enter password
 # figlet -k Google Photos, You may need to enter passwword
 
 # Move JPEG files to Google Photos
-echo Moving JPEG photos to Google Photos
-# rclone move "$GOOGLEPHOTOS_DIR" GooglePhotos:upload
+# echo Moving JPEG photos to Google Photos
+# rclone move "$GOOGLE_PHOTOS_JPEG_UPLOAD_DIR" GooglePhotos:upload
