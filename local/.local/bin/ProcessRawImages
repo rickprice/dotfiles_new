@@ -55,7 +55,7 @@ exiftool -geotag "$LOCATION_HISTORY_FILE" '-geotime<${DateTimeOriginal}-04:00' .
 
 figlet Step 6: Convert photos going to Google to JPEG
 # Convert files in batch mode using default parameters
-[ "$(ls -A $ORIGINAL_GOOGLE_PHOTOS_RAWS_UPLOAD_DIR)" ] && rawtherapee-cli -d -o $GOOGLE_PHOTOS_JPEG_UPLOAD_DIR -c $ORIGINAL_GOOGLE_PHOTOS_RAWS_UPLOAD_DIR
+[ "$(ls -A $ORIGINAL_GOOGLE_PHOTOS_RAWS_UPLOAD_DIR)" ] && rawtherapee-cli -d -s -o $GOOGLE_PHOTOS_JPEG_UPLOAD_DIR -c $ORIGINAL_GOOGLE_PHOTOS_RAWS_UPLOAD_DIR
 
 # Remember we may need to enter password
 figlet -k DropBox, You may need to enter passwword
