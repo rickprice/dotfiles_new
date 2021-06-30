@@ -72,10 +72,12 @@ yay --noconfirm -S wezterm-git
 yay --noconfirm -S xorg-xfontsel
 # yay --noconfirm -S nerd-fonts-complete
 yay --noconfirm -S ttf-iosevka-git
-yay --noconfirm -S noto-fonts
-yay --noconfirm -S noto-fonts-emoji
-yay --noconfirm -S noto-fonts-extra
-yay --noconfirm -S ttf-linux-libertine
+# yay --noconfirm -S noto-fonts
+# yay --noconfirm -S noto-fonts-emoji
+# yay --noconfirm -S noto-fonts-extra
+# yay --noconfirm -S ttf-linux-libertine
+yay --noconfirm -S powerline-fonts
+yay --noconfirm -S adobe-source-code-pro-fonts
 
 # Photographic processing
 yay --noconfirm -S rawtherapee

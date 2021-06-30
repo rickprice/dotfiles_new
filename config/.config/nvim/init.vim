@@ -1,4 +1,4 @@
-" These were generally required in the past, but may not be anymore
+" Thes were generally required in the past, but may not be anymore
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -115,7 +115,37 @@ nnoremap <leader>gP :! git push<CR>  " git Push
 Plug 'rust-lang/rust.vim', { 'for' : 'rust' }
 Plug 'Yggdroot/indentLine'
 Plug 'junegunn/vim-plug'
+
 Plug 'vim-airline/vim-airline'
+" air-line
+let g:airline_powerline_fonts = 1
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+
+" airline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
 
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
@@ -629,7 +659,7 @@ noremap <F3> :set list!<CR>
 " :w!! to save with sudo
 " ca w!! w !sudo -S tee >/dev/null "%"
 " Suda plugin, which replaces the above
-let g:suda_smart_edit = 1 
+let g:suda_smart_edit = 1
 
 " Insert current date or date and time in insert mode
 iabbrev <silent> dst <C-R>=strftime("%Y-%m-%d")<cr>
