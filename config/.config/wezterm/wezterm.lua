@@ -2,7 +2,8 @@ local wezterm = require 'wezterm';
 return {
   enable_tab_bar=false,
   -- color_scheme="Adventure",
-  color_scheme="Jellybeans",
+  -- color_scheme="Jellybeans",
+  color_scheme="BuiltinDark",
 
     font = wezterm.font_with_fallback({"Iosevka","Source Code Pro","Source Code Variable","PowerlineSymbols"}),
     font_size = 11.0,
