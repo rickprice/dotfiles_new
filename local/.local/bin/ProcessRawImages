@@ -11,28 +11,36 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 # Setup where everything goes
 DOWNLOADS_DIR=~/Downloads
 DROPBOX_UPLOAD_DIR=./SendToDropBox
+DROPBOX_UPLOAD_DIR_ERIC=./SendToDropBoxEric
 GOOGLE_PHOTOS_JPEG_UPLOAD_DIR=./SendToGooglePhotos
 GOOGLE_TAKEOUT_DIR=./Takeout
 LOCATION_HISTORY_FILE="$GOOGLE_TAKEOUT_DIR/Location History/Location History.kml"
 ORIGINAL_GOOGLE_PHOTOS_RAWS=./GooglePhotosRaws
 ORIGINAL_GOOGLE_PHOTOS_RAWS_UPLOAD_DIR=./GooglePhotosRawsUpload
 ORIGINAL_RAWS_DIR=./Original_Raws
+ORIGINAL_ERIC_CAMERA_DIR=./EricBlueCamera
+ORIGINAL_CANON_POWERSHOT_DIR=./CanonPowershot
 WORKING_DIR=.
 
 cd $WORKING_DIR 
 
 figlet Step 1: Clear out existing data
 rm -rf $DROPBOX_UPLOAD_DIR
+rm -rf $DROPBOX_UPLOAD_DIR_ERIC
+rm -rf $DROPBOX_UPLOAD_DIR_ERIC
 rm -rf $GOOGLE_PHOTOS_JPEG_UPLOAD_DIR
 rm -rf $GOOGLE_TAKEOUT_DIR
 rm -rf $ORIGINAL_GOOGLE_PHOTOS_RAWS_UPLOAD_DIR
 
 figlet Step 2: Ensure our directories exist
 mkdir -p $DROPBOX_UPLOAD_DIR
+mkdir -p $DROPBOX_UPLOAD_DIR_ERIC
 mkdir -p $GOOGLE_PHOTOS_JPEG_UPLOAD_DIR
 mkdir -p $ORIGINAL_GOOGLE_PHOTOS_RAWS
 mkdir -p $ORIGINAL_GOOGLE_PHOTOS_RAWS_UPLOAD_DIR
 mkdir -p $ORIGINAL_RAWS_DIR
+mkdir -p $ORIGINAL_ERIC_CAMERA_DIR
+mkdir -p $ORIGINAL_CANON_POWERSHOT_DIR
 
 figlet Step 3: Setup Google Takeout data
 if [[ $(find $DOWNLOADS_DIR -maxdepth 1 -name 'takeout-*' -printf c | wc -c) == "1" ]]; then
@@ -46,11 +54,14 @@ fi
 terminal -e watch --interval 120 "ls --format=single-column $DROPBOX_UPLOAD_DIR $ORIGINAL_GOOGLE_PHOTOS_RAWS_UPLOAD_DIR| wc --lines | figlet -k"
 
 figlet Step 4: Copy original RAW files to staging
-rsync $ORIGINAL_RAWS_DIR/* $DROPBOX_UPLOAD_DIR
+rsync --ignore-missing-args $ORIGINAL_RAWS_DIR/* $DROPBOX_UPLOAD_DIR
+rsync --ignore-missing-args $ORIGINAL_CANON_POWERSHOT_DIR/* $DROPBOX_UPLOAD_DIR
+rsync --ignore-missing-args $ORIGINAL_ERIC_CAMERA_DIR/* $DROPBOX_UPLOAD_DIR_ERIC
 rsync --ignore-missing-args $ORIGINAL_GOOGLE_PHOTOS_RAWS/* $ORIGINAL_GOOGLE_PHOTOS_RAWS_UPLOAD_DIR
 
 figlet Step 5: Geotag photos
-exiftool -geotag "$LOCATION_HISTORY_FILE" '-geotime<${DateTimeOriginal}-04:00' . -api GeoMaxIntSecs=1800 -overwrite_original_in_place $DROPBOX_UPLOAD_DIR/*
+[ "$(ls -A $DROPBOX_UPLOAD_DIR)" ] && exiftool -geotag "$LOCATION_HISTORY_FILE" '-geotime<${DateTimeOriginal}-04:00' . -api GeoMaxIntSecs=1800 -overwrite_original_in_place $DROPBOX_UPLOAD_DIR/*
+[ "$(ls -A $DROPBOX_UPLOAD_DIR_ERIC)" ] && exiftool -geotag "$LOCATION_HISTORY_FILE" '-geotime<${DateTimeOriginal}-04:00' . -api GeoMaxIntSecs=1800 -overwrite_original_in_place $DROPBOX_UPLOAD_DIR_ERIC/*
 [ "$(ls -A $ORIGINAL_GOOGLE_PHOTOS_RAWS_UPLOAD_DIR)" ] && exiftool -geotag "$LOCATION_HISTORY_FILE" '-geotime<${DateTimeOriginal}-04:00' . -api GeoMaxIntSecs=1800 -overwrite_original_in_place $ORIGINAL_GOOGLE_PHOTOS_RAWS_UPLOAD_DIR/*
 
 figlet Step 6: Convert photos going to Google to JPEG
@@ -63,6 +74,7 @@ figlet -k DropBox, You may need to enter passwword
 figlet Step 7: Upload RAW files to Dropbox
 rclone move "$DROPBOX_UPLOAD_DIR" Dropbox:Pictures/CanonRawPhotos
 rclone move "$ORIGINAL_GOOGLE_PHOTOS_RAWS_UPLOAD_DIR" Dropbox:Pictures/CanonRawPhotos
+rclone move "$DROPBOX_UPLOAD_DIR_ERIC" Dropbox:Pictures/EricCameraPhotos
 
 figlet Step 8: You now need to manually upload the photos going to Google Photos
 # Remember we may need to enter password
