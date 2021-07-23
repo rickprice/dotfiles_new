@@ -85,6 +85,7 @@ yay --noconfirm -S gimp
 yay --noconfirm -S perl-image-exiftool
 yay --noconfirm -S nomacs
 yay --noconfirm -S imagemagick
+yay --noconfirm -S openexr
 yay --noconfirm -S darktable-git
 
 # Moving files to and from DropBox
