@@ -292,6 +292,9 @@ endif
 " Vim Diff tools
 Plug 'whiteinge/diffconflicts'
 
+" Comment colouring plugins
+Plug 'jbgutierrez/vim-better-comments'
+
 " Colour Schemes
 " - Color support plugins
 " Clap (which is loaded) also has colorscheme switching
