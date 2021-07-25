@@ -8,15 +8,21 @@ trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
 ## echo an error message before exiting
 trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
+# Configure sudo on arch to be less frustrating
+sudo cp sudo_config_items/50_configure_timeouts /etc/sudoers.d
+sudo chown root:root /etc/sudoers.d/50_configure_timeouts
+
 #Setup Packages for Arch
 
 ## Upgrade everything
 sudo pacman --noconfirm -Syu
 
 # Install Yay
+pushd .
+cd /tmp
+rm -rf yay
 sudo pacman --noconfirm -S --needed git base-devel
 git clone https://aur.archlinux.org/yay.git
-pushd .
 cd yay
 makepkg -si
 popd
@@ -53,12 +59,11 @@ yay --noconfirm -S hub
 yay --noconfirm -S x11-ssh-askpass
 yay --noconfirm -S mosh
 yay --noconfirm -S timeshift
-yay --noconfirm -S timeshift-autosnap
 yay --noconfirm -S firefox-developer-edition
-yay --noconfirm -S weechat-git
+# yay --noconfirm -S weechat-git
 yay --noconfirm -S googler
 yay --noconfirm -S so
-yay --noconfirm -S luakit-git
+# yay --noconfirm -S luakit-git
 yay --noconfirm -S fwupd
 yay --noconfirm -S bazelisk-bin
 yay --noconfirm -S meld
@@ -243,4 +248,7 @@ yay --noconfirm -S python-isort
 # Video
 yay --noconfirm -S vlc
 yay --noconfirm -S flowblade
+
+# Turn on autosnap last because during an initial install it does too many snapshots
+yay --noconfirm -S timeshift-autosnap
 
