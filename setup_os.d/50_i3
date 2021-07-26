@@ -19,4 +19,4 @@ yay --noconfirm -S xfce4-power-manager
 yay --noconfirm -S pamac-aur
 yay --noconfirm -S xautolock
 # yay --noconfirm -S i3lock-blur
-yay --noconfirm -S ff-theme-util
+# yay --noconfirm -S ff-theme-util
