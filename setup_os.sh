@@ -22,3 +22,5 @@ source_files_in() {
 }
 
 source_files_in $SCRIPT_BASE/setup_os.d
+
+return 0
