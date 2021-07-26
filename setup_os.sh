@@ -148,7 +148,7 @@ sudo brsaneconfig4 -a name=BROTHER model=MFC-L2700DW ip="$PRINTER_IP"
 # brsaneconfig4 -a name=BROTHER model=MFC-L2700DW nodename=BRWD85DE244E1EB
 
 ### Setup Brother Printer
-sudo pacman --noconfirm -S cups manjaro-printer
+sudo pacman --noconfirm -S cups
 sudo systemctl enable cups.service
 sudo systemctl start cups.service
 sudo pacman --noconfirm -S cups system-config-printer
