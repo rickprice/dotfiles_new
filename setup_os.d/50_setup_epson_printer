@@ -15,6 +15,6 @@ sudo pacman --noconfirm -Sy cups cups-pdf
 sudo gpasswd -a `whoami` lp
 # ! Doesn't seem to be needed
 # sudo gpasswd -a `whoami` lpadmin
+# sudo systemctl start org.cups.cupsd.service
+# sudo systemctl enable org.cups.cupsd.service
 # ! Doesn't seem to be needed
-sudo systemctl start org.cups.cupsd.service
-sudo systemctl enable org.cups.cupsd.service
