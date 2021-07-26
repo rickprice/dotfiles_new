@@ -56,3 +56,6 @@ xdg-mime default glogg.desktop text/x-log
 ## Git-LFS
 yay --noconfirm -S git-lfs
 git lfs install
+
+## Man packages
+yay --noconfirm -S man-db
