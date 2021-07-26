@@ -252,3 +252,6 @@ yay --noconfirm -S flowblade
 # Turn on autosnap last because during an initial install it does too many snapshots
 yay --noconfirm -S timeshift-autosnap
 
+# These are needed for the new Arch install
+yay --noconfirm -S dmenu-frecency
+yay --noconfirm -S i3exit
