@@ -9,9 +9,9 @@ trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
 trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
 # Setup Epson ET-2720 printer
-sudo pacman -Sy patch
+sudo pacman --noconfirm -Sy patch
 yay --noconfirm -S epson-inkjet-printer-escpr
-sudo pacman -Sy cups cups-pdf
+sudo pacman --noconfirm -Sy cups cups-pdf
 sudo gpasswd -a `whoami` lp
 sudo gpasswd -a `whoami` lpadmin
 sudo systemctl start org.cups.cupsd.service
