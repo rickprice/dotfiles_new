@@ -16,7 +16,7 @@ source_files_in() {
 
     if [[ -d "$dir" && -r "$dir" && -x "$dir" ]]; then
         for file in "$dir"/*; do
-          [[ -x "$file" && -f "$file" && -r "$file" ]] && "Sourcing file [$file]" && . "$file"
+          [[ -x "$file" && -f "$file" && -r "$file" ]] && "Sourcing file [$file]" && . "$SCRIPT_BASE/$file"
         done
     fi
 }
