@@ -18,5 +18,3 @@ sudo ln --force -s ~/.dotfiles/X11/xinit/xinitrc.d/60-ssh-agent.sh /etc/X11/xini
 sudo pacman --noconfirm -S openssh
 sudo systemctl enable sshd
 sudo systemctl start sshd
-
-false
