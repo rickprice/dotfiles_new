@@ -25,8 +25,6 @@ stow --dotfiles config
 stow --dotfiles local
 stow --dotfiles tmux
 stow --dotfiles mutt
-rm -rf ~/.i3
-stow --dotfiles i3
 stow --dotfiles weechat
 
 ### Configure Shell snippets ###
