@@ -16,9 +16,9 @@ source_files_in() {
 
     if [[ -d "$dir" && -r "$dir" && -x "$dir" ]]; then
         for file in "$dir"/*; do
-          [[ -x "$file" && -f "$file" && -r "$file" ]] && . "$file"
+          [[ -x "$file" && -f "$file" && -r "$file" ]] && "Sourcing file [$file]" && . "$file"
         done
     fi
 }
 
-source_files_in ~/setup_os.d
+source_files_in $SCRIPT_BASE/setup_os.d
