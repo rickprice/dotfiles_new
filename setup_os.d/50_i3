@@ -11,3 +11,12 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 ## i3 things
 yay --noconfirm -S dmenu-frecency
 yay --noconfirm -S i3exit
+yay --noconfirm -S polkit-gnome
+yay --noconfirm -S nitrogen
+yay --noconfirm -S picom
+yay --noconfirm -S nm-applet
+yay --noconfirm -S xfce4-xfce4-power-manager
+yay --noconfirm -S pamac-tray
+yay --noconfirm -S xautolock
+yay --noconfirm -S blurlock
+yay --noconfirm -S ff-theme-util
