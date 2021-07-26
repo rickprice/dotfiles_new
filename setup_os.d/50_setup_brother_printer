@@ -9,7 +9,8 @@ trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
 trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
 ## Needed for Brother MFC-L2700DW
-PRINTER_IP="192.168.0.194"
+PRINTER_IP="192.168.50.253"
+
 ### Setup Brother scanner
 yay --noconfirm -S brother-mfc-l2710dw
 yay --noconfirm -S brscan4
