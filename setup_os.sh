@@ -16,7 +16,7 @@ source_files_in() {
 
     if [[ -d "$dir" && -r "$dir" && -x "$dir" ]]; then
         for file in "$dir"/*; do
-          [[ -x "$file" && -f "$file" && -r "$file" ]] && echo "\n+++ Sourcing file [$file]\n\n" && . "$file"
+          [[ -x "$file" && -f "$file" && -r "$file" ]] && echo -en "\n+++ Sourcing file " && echo -n "[$file]" && echo -e "\n\n" && . "$file"
         done
     fi
 }
