@@ -13,6 +13,8 @@ sudo pacman --noconfirm -Sy patch
 yay --noconfirm -S epson-inkjet-printer-escpr
 sudo pacman --noconfirm -Sy cups cups-pdf
 sudo gpasswd -a `whoami` lp
-sudo gpasswd -a `whoami` lpadmin
+# ! Doesn't seem to be needed
+# sudo gpasswd -a `whoami` lpadmin
+# ! Doesn't seem to be needed
 sudo systemctl start org.cups.cupsd.service
 sudo systemctl enable org.cups.cupsd.service
