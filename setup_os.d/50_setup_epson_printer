@@ -10,7 +10,7 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
 # Setup Epson ET-2720 printer
 sudo pacman -Sy patch
-yay -S epson-inkjet-printer-escpr
+yay --noconfirm -S epson-inkjet-printer-escpr
 sudo pacman -Sy cups cups-pdf
 sudo gpasswd -a `whoami` lp
 sudo gpasswd -a `whoami` lpadmin
