@@ -8,22 +8,7 @@ trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
 ## echo an error message before exiting
 trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
-echo "Need to copy .ssh directory over from existing machine"
-echo
-echo "After copying the directory, and not before..."
-
-echo "Press any key to continue"
-while [ true ] ; do
-# read -t 3 -n 1
-read -n 1
-if [ $? = 0 ] ; then
-exit ;
-else
-echo "waiting for the keypress"
-fi
-done
-
-echo "Need to copy .gnupg directory over from existing machine"
+echo "Need to copy the .ssh and .gnupg directories over from an existing machine"
 echo
 echo "After copying the directory, and not before..."
 
