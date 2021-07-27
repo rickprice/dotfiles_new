@@ -22,3 +22,6 @@ yay --noconfirm -S xautolock
 # yay --noconfirm -S ff-theme-util
 yay --noconfirm -S volumeicon
 yay --noconfirm -S alsa-utils
+yay --noconfirm -S i3-scrot
+yay --noconfirm -S xorg-xkill
+yay --noconfirm -S network-manager-applet
