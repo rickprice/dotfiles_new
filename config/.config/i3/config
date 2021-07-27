@@ -481,3 +481,8 @@ bindsym $mod+m bar mode toggle
 #         bindsym Return mode "default"
 #         bindsym Escape mode "default"
 # }
+
+
+## Settings for i3-wm
+
+hide_edge_borders smart
