@@ -21,3 +21,4 @@ yay --noconfirm -S xautolock
 # yay --noconfirm -S i3lock-blur
 # yay --noconfirm -S ff-theme-util
 yay --noconfirm -S volumeicon
+yay --noconfirm -S alsa-utils
