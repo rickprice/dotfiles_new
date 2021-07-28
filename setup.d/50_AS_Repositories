@@ -12,7 +12,7 @@ AS_REPOSITORIES_LOCATION=~/Documents/ActiveState
 
 mkdir -p $AS_REPOSITORIES_LOCATION
 
-$AS_THEHOMEREPOT=$AS_REPOSITORIES_LOCATION/TheHomeRepot
+AS_THEHOMEREPOT=$AS_REPOSITORIES_LOCATION/TheHomeRepot
 if [ ! -d $AS_THEHOMEREPOT ] ; then
 
     git clone git@github.com:ActiveState/TheHomeRepot.git $AS_THEHOMEREPOT
@@ -20,7 +20,7 @@ if [ ! -d $AS_THEHOMEREPOT ] ; then
 
 fi
 
-$AS_CAMEL=$AS_REPOSITORIES_LOCATION/camel
+AS_CAMEL=$AS_REPOSITORIES_LOCATION/camel
 if [ ! -d $AS_CAMEL ] ; then
 
     git clone git@github.com:ActiveState/camel.git $AS_CAMEL
