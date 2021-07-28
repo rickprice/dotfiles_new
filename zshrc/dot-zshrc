@@ -112,3 +112,9 @@ source_files_in() {
 }
 
 source_files_in ~/.shell_snippets
+# -- START ACTIVESTATE INSTALLATION
+export PATH="/home/fprice/.dotfiles/local/.local/bin:$PATH"
+# -- STOP ACTIVESTATE INSTALLATION
+# -- START ACTIVESTATE DEFAULT RUNTIME ENVIRONMENT
+export PATH="/home/fprice/.cache/activestate/bin:$PATH"
+# -- STOP ACTIVESTATE DEFAULT RUNTIME ENVIRONMENT
