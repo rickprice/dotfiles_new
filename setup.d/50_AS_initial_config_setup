@@ -1,0 +1,40 @@
+#! /bin/sh
+
+# Fail script if any command fails
+set -e
+
+## keep track of the last executed command
+trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
+## echo an error message before exiting
+trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
+
+# We can't check this file into source control because it has secrets in it
+SENTINEL_AS_SETUP_SCRIPT=~/.local/bin/set_as_config.sh
+
+if [ ! -f $SENTINEL_AS_SETUP_SCRIPT ] ; then
+
+    FILE=`zenity --file-selection --title="Select ActiveState developer configuration file"`
+
+    case $? in
+             0)
+                    echo "\"$FILE\" selected.";;
+             1)
+                    echo "No file selected.";;
+                    exit 1
+            -1)
+                    echo "An unexpected error has occurred.";;
+                    exit -1
+    esac
+
+    python $SCRIPT_BASE/initial_setup.py $FILE
+
+    # AS_USER=$(zenity --entry --text 'Please enter the value for AS_USER:') || exit 1
+    # CODE_SIGNING_PASSWORD=$(zenity --entry --text 'Please enter the value for CODE_SIGNING_PASSWORD (in 1Password):') || exit 1
+    # CODE_SIGNING_CERT=$(zenity --entry --text 'Please enter the value for CODE_SIGNING_CERT (in 1Password):') || exit 1
+
+    # # Create setup script
+    # echo "export AS_USER=$AS_USER" > $AS_SETUP_SCRIPT
+    # echo "export CODE_SIGNING_PASSWD=$CODE_SIGNING_PASSWD" >> $AS_SETUP_SCRIPT
+    # echo "export CODE_SIGNING_CERT=$CODE_SIGNING_CERT" >> $AS_SETUP_SCRIPT
+
+fi

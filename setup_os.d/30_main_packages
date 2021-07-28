@@ -18,6 +18,7 @@ sudo pacman --noconfirm -S fd
 sudo pacman --noconfirm -S tmux
 sudo pacman --noconfirm -S zip
 sudo pacman --noconfirm -S unzip
+sudo pacman --noconfirm -S zenity
 sudo pacman --noconfirm -S tlp tlp-rdw acpi_call
 
 ## Install AUR packages I want
