@@ -1,0 +1,29 @@
+#! /bin/sh
+
+# Fail script if any command fails
+set -e
+
+## keep track of the last executed command
+trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
+## echo an error message before exiting
+trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
+
+AS_REPOSITORIES_LOCATION=~/Documents/ActiveState
+
+mkdir -p $AS_REPOSITORIES_LOCATION
+
+$AS_THEHOMEREPOT=$AS_REPOSITORIES_LOCATION/TheHomeRepot
+if [ ! -d $AS_THEHOMEREPOT ] ; then
+
+    git clone git@github.com:ActiveState/TheHomeRepot.git $AS_THEHOMEREPOT
+    ln -s $AS_THEHOMEREPOT ~/TheHomeRepot
+
+fi
+
+$AS_CAMEL=$AS_REPOSITORIES_LOCATION/camel
+if [ ! -d $AS_CAMEL ] ; then
+
+    git clone git@github.com:ActiveState/camel.git $AS_CAMEL
+    ln -s $AS_CAMEL ~/camel
+
+fi

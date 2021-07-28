@@ -71,12 +71,12 @@ figlet Step 5: Geotag photos
 # [ "$(ls -A $ORIGINAL_GOOGLE_PHOTOS_RAWS_UPLOAD_DIR)" ] && rawtherapee-cli -d -s -o $GOOGLE_PHOTOS_JPEG_UPLOAD_DIR -c $ORIGINAL_GOOGLE_PHOTOS_RAWS_UPLOAD_DIR
 
 # Remember we may need to enter password
-figlet -k DropBox, You may need to enter passwword
+# figlet -k DropBox, You may need to enter passwword
 
-figlet Step 7: Upload RAW files to Dropbox
-rclone move "$DROPBOX_UPLOAD_DIR" Dropbox:Pictures/CanonRawPhotos
-rclone move "$ORIGINAL_GOOGLE_PHOTOS_RAWS_UPLOAD_DIR" Dropbox:Pictures/CanonRawPhotos
-rclone move "$DROPBOX_UPLOAD_DIR_ERIC" Dropbox:Pictures/EricCameraPhotos
+# figlet Step 7: Upload RAW files to Dropbox
+# rclone move "$DROPBOX_UPLOAD_DIR" Dropbox:Pictures/CanonRawPhotos
+# rclone move "$ORIGINAL_GOOGLE_PHOTOS_RAWS_UPLOAD_DIR" Dropbox:Pictures/CanonRawPhotos
+# rclone move "$DROPBOX_UPLOAD_DIR_ERIC" Dropbox:Pictures/EricCameraPhotos
 
 # figlet Step 8: You now need to manually upload the photos going to Google Photos
 # Remember we may need to enter password
