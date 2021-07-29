@@ -16,11 +16,11 @@ if [ ! -f $SENTINEL_AS_SETUP_SCRIPT ] ; then
     FILE=`zenity --file-selection --title="Select ActiveState developer configuration file"`
 
     case $? in
-             0)
+             0 )
                     echo "\"$FILE\" selected.";;
-             1)
+             1 )
                  echo "No file selected." && exit( 1 ) ;;
-            -1)
+            -1 )
                 echo "An unexpected error has occurred." && exit( -1 ) ;;
     esac
 
