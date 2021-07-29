@@ -18,7 +18,7 @@ alias bet='cd ~/TheHomeRepot/lib/python/ActiveStatePlatform'
 alias ripenv='pipenv --rm && pipenv install --dev'
 # alias tidyall='~/perl5/perlbrew/perls/perl-5.26.1/bin/tidyall'
 
-function be() { cd ~/TheHomeRepot/lib/python; pipenv shell; }
+# function be() { cd ~/TheHomeRepot/lib/python; pipenv shell; }
 
 
 function plat() {
@@ -37,7 +37,7 @@ function PR-DEPLOY() {
 
 function PR() {
        plat $1;
-       echo -e "$AS_USER\n" | ~/TheHomeRepot/lib/python/ActiveStatePlatform/tools/apikey.py new;
+       echo -e "$AS_USER\n" | apikey new;
 }
 
 alias prod='plat prod'
@@ -153,5 +153,5 @@ function get_build_script(){
 alias git=hub
 
 # Fixes from Marc Gutman for enabling and disabling triggers on a PR
-alias dbt_off="psql -d inventory_pr_$AS_PLATFORM -h pgdev.ceurkm6upyli.us-east-1.rds.amazonaws.com -U pb_admin -p 5432 -c 'SELECT disable_feature_trigger();'"
-alias dbt_on="psql -d inventory_pr_$AS_PLATFORM -h pgdev.ceurkm6upyli.us-east-1.rds.amazonaws.com -U pb_admin -p 5432 -c 'SELECT enable_feature_trigger();'"
+# alias dbt_off="psql -d inventory_pr_$AS_PLATFORM -h pgdev.ceurkm6upyli.us-east-1.rds.amazonaws.com -U pb_admin -p 5432 -c 'SELECT disable_feature_trigger();'"
+# alias dbt_on="psql -d inventory_pr_$AS_PLATFORM -h pgdev.ceurkm6upyli.us-east-1.rds.amazonaws.com -U pb_admin -p 5432 -c 'SELECT enable_feature_trigger();'"
