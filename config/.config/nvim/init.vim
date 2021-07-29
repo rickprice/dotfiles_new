@@ -164,6 +164,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-vinegar'
 
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
