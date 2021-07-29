@@ -1,3 +1,6 @@
+#! The state tool messes this up, so read it in by hand
+source ~/.zshenv
+
 # Personal Zsh configuration file. It is strongly recommended to keep all
 # shell customization and configuration (including exported environment
 # variables such as PATH) in this file or in files source by it.
