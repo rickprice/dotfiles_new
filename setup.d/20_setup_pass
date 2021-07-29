@@ -8,4 +8,9 @@ trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
 ## echo an error message before exiting
 trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
-git clone git@github.com:rickprice/password.git ~/.password-store
+PASSWORD_STORE_LOCATION=~/.password-store
+if [ ! -d $PASSWORD_STORE_LOCATION ] ; then
+
+    git clone tgit@github.com:rickprice/password.git $PASSWORD_STORE_LOCATION
+
+fi
