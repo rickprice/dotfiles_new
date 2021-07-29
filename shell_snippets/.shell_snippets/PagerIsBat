@@ -1,0 +1,2 @@
+# Set the pager to bat
+export PAGER=bat
