@@ -139,18 +139,20 @@ def main() -> None:
     # print("Seems that required software is installed")
     # print()
 
-    # print("Ensuring code checked out")
-    # ensure_repository_checked_out(
-    #     Path(os.path.join(home_directory, "camel")), "git@github.com:ActiveState/camel.git"
-    # )
-    # ensure_repository_checked_out(
-    #     Path(os.path.join(home_directory, "TheHomeRepot")),
-    #     "git@github.com:ActiveState/TheHomeRepot.git",
-    # )
-    # ensure_repository_checked_out(
-    #     Path(os.path.join(home_directory, "langtools")), "git@github.com:ActiveState/langtools.git"
-    # )
-    # print("Code is now checked out")
+    print("Ensuring code checked out")
+    destination_directory=Path(os.path.join(home_directory, "ActiveState","camel"))
+    link_destination=Path(os.path.join(home_directory, "camel"))
+    ensure_repository_checked_out(destination_directory,
+        "git@github.com:ActiveState/camel.git"
+    )
+    ensure_link_exists(destination_directory, link_destination)
+
+    destination_directory=Path(os.path.join(home_directory, "ActiveState","TheHomeRepot"))
+    link_destination=Path(os.path.join(home_directory, "TheHomeRepot"))
+    ensure_repository_checked_out(destination_directory,
+        "git@github.com:ActiveState/TheHomeRepot.git"
+    )
+    ensure_link_exists(destination_directory, link_destination)
 
 
 def printSSHCreationMessage(dot_ssh_directory: Path) -> None:
@@ -329,6 +331,15 @@ def ensure_directory_exists(directory: Path) -> None:
     if not os.path.isdir(directory):
         print(f"...... Creating {directory}")
         os.makedirs(directory)
+
+
+def ensure_link_exists(source_path: Path, destination_path: Path) -> None:
+    """Ensure that a link exists, creating if needed."""
+
+    print(f"... Ensuring link [{source_path}] exists")
+    if not os.path.islink(source_path):
+        print(f"...... Creating link {source_path} to {destination_path}")
+        os.symlink(source_path, destination_path)
 
 
 def does_file_exist(file_path: Path) -> bool:
