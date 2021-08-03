@@ -219,7 +219,7 @@ def ensure_link_exists(source_path: Path, destination_path: Path) -> None:
     """Ensure that a link exists, creating if needed."""
 
     print(f"... Ensuring link [{source_path}] exists")
-    if not os.path.islink(source_path):
+    if not os.path.islink(destination_path):
         print(f"...... Creating link {source_path} to {destination_path}")
         os.symlink(source_path, destination_path)
 
@@ -598,7 +598,9 @@ def main() -> None:
     # print()
 
     print("Ensuring code checked out")
-    destination_directory = Path(os.path.join(home_directory, "ActiveState", "camel"))
+    destination_directory = Path(
+        os.path.join(home_directory, "Documents", "ActiveState", "camel")
+    )
     link_destination = Path(os.path.join(home_directory, "camel"))
     ensure_repository_checked_out(
         destination_directory, "git@github.com:ActiveState/camel.git"
@@ -606,7 +608,7 @@ def main() -> None:
     ensure_link_exists(destination_directory, link_destination)
 
     destination_directory = Path(
-        os.path.join(home_directory, "ActiveState", "TheHomeRepot")
+        os.path.join(home_directory, "Documents", "ActiveState", "TheHomeRepot")
     )
     link_destination = Path(os.path.join(home_directory, "TheHomeRepot"))
     ensure_repository_checked_out(
