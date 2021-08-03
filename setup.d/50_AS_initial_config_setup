@@ -11,7 +11,7 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 # We can't check this file into source control because it has secrets in it
 SENTINEL_AS_SETUP_SCRIPT=~/.local/bin/set_as_config.sh
 
-if [ ! -f $SENTINEL_AS_SETUP_SCRIPT ] ; then
+# if [ ! -f $SENTINEL_AS_SETUP_SCRIPT ] ; then
 
     FILE=`zenity --file-selection --title="Select ActiveState developer configuration file"`
 
@@ -28,4 +28,4 @@ if [ ! -f $SENTINEL_AS_SETUP_SCRIPT ] ; then
 
     python $SCRIPT_BASE/initial_setup.py $FILE
 
-fi
+# fi
