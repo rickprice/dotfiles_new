@@ -26,135 +26,6 @@ args = parser.parse_args()
 configuration_file = args.configuration_file
 
 
-def main() -> None:
-    """Run through all the steps to setup the development environment."""
-    print("Initial setup of docker image for ActiveState development")
-
-    print(
-        "You need to be on the 'dev' VPN to do your work, the office VPN will be slower and give you problems..."
-    )
-
-    print("Doing initial checks")
-
-    if not args.offline:
-        print("... Checking for VPN connectivity")
-        if not are_we_on_activestate_vpn():
-            print(
-                "You need to connect to the ActiveState VPN before running this script, preferably the Dev VPN because it will work better"
-            )
-            exit(6)
-        if are_we_on_activestate_office_vpn():
-            print(
-                "WARNING: You are connected to the ActiveState Office VPN, it would be bettter to use the Dev VPN"
-            )
-
-    print("... Checking for home directory")
-    home_directory = Path.home()
-    checkForDirectory(
-        home_directory,
-        f"Couldn't find your home directory [{home_directory}], something is probably very wrong with the script, please contact {script_author}",
-        1,
-    )
-
-    print("... Checking for .ssh directory")
-    dot_ssh_directory = Path(os.path.join(home_directory, ".ssh"))
-    checkForDirectory(dot_ssh_directory, printSSHCreationMessage, 2)
-
-    dot_ssh_pub_file = Path(os.path.join(home_directory, ".ssh", "id_ed25519.pub"))
-    print("... Checking for id_ed25519.pub file")
-    checkForFile(dot_ssh_pub_file, printSSHCreationMessage, 3)
-
-    print("Seems all the inital checks passed")
-    print()
-
-    print("Ensure required directories exist and are populated")
-    ensure_directory_exists(
-        # Path(os.path.join(home_directory, "Documents", "ActiveState", "DockerMount"))
-    # )
-    # ensure_directory_exists(
-        # Path(os.path.join(home_directory, "Documents", "ActiveState", "CommandScriptLogs"))
-    # )
-    # ensure_directory_exists(
-        # Path(os.path.join(home_directory, "Documents", "ActiveState", "ConfigurationBackups"))
-    # )
-    ensure_directory_exists(Path(os.path.join(home_directory, ".local", "bin")))
-    # ensure_directory_exists(Path(os.path.join(home_directory, "camel")))
-    # ensure_directory_exists(Path(os.path.join(home_directory, "TheHomeRepot")))
-    ensure_directory_exists(Path(os.path.join(home_directory, ".aws")))
-    ensure_directory_exists(Path(os.path.join(home_directory, ".config")))
-    print("Required directories exist")
-    print()
-
-    print("Check environment variables")
-    print("... Checking PATH")
-    if "PATH" in os.environ:
-        print("...... PATH environment variable exists")
-        path_value = os.environ.get("PATH")
-        should_be_in_path = os.path.join(home_directory, ".local", "bin")
-        if path_value is not None and should_be_in_path in path_value:
-            print(f"...... PATH seems to contain {should_be_in_path}, good...")
-        else:
-            print(
-                f"PATH needs to contain {should_be_in_path} so that state tool can install somewhere"
-            )
-            print("Try running the following:")
-            print(f"echo 'export PATH={should_be_in_path}:$PATH' >> ~/.bashrc")
-            print("source ~/.bashrc")
-            exit(5)
-
-    print("Seems environment variables are good")
-    print()
-
-    print("Reading configuration file: ", configuration_file)
-    with open(configuration_file) as f:
-        data = yaml.load(f, Loader=yaml.FullLoader)
-    print()
-    print("Creating files if they don't exist")
-    write_gitconfig_file(home_directory, data)
-    write_aws_config_file(home_directory, data)
-    # write_aws_credentials_file(home_directory, data)
-    write_dotconfig_hub_file(home_directory, data)
-    write_dotcamel_file(home_directory, data)
-    write_pr_user_file(home_directory, data)
-    write_pivotaltrackerc_file(home_directory, data)
-    write_shellchoice_file(home_directory, data)
-    write_editorchoice_file(home_directory, data)
-    write_Ultisnips_config_file(home_directory, data)
-    print("Configuration files now handled")
-    print()
-
-    print("Check that required software is installed")
-    # check_for_software("curl", "7.68.0", r"^curl (\S*).*", deal_with_software_apt)
-
-    # check_for_software("git", "2.24.3", r"^git version (\S*)", deal_with_software_apt)
-    # check_for_software("git-lfs", "2.9.2", r"^git-lfs/(\S*)", deal_with_software_apt)
-    # check_for_software("pipenv", "11.9.0", r"^pipenv, version (\S*)", deal_with_software_apt)
-    # check_for_software("java", "11.0.0", r"openjdk (\S*)", deal_with_software_apt)
-
-    # check_for_software("stow", "2.3.1", r"^stow.*version (\S*)", deal_with_software_state_tool)
-    # print("Seems that required software is installed")
-    # print()
-
-    # check_for_software("state", "0.13.31", r"^Version (\S*)", deal_with_software_state_tool)
-    # print("Seems that required software is installed")
-    # print()
-
-    print("Ensuring code checked out")
-    destination_directory=Path(os.path.join(home_directory, "ActiveState","camel"))
-    link_destination=Path(os.path.join(home_directory, "camel"))
-    ensure_repository_checked_out(destination_directory,
-        "git@github.com:ActiveState/camel.git"
-    )
-    ensure_link_exists(destination_directory, link_destination)
-
-    destination_directory=Path(os.path.join(home_directory, "ActiveState","TheHomeRepot"))
-    link_destination=Path(os.path.join(home_directory, "TheHomeRepot"))
-    ensure_repository_checked_out(destination_directory,
-        "git@github.com:ActiveState/TheHomeRepot.git"
-    )
-    ensure_link_exists(destination_directory, link_destination)
-
-
 def printSSHCreationMessage(dot_ssh_directory: Path) -> None:
     """Print the message that explains how to setup SSH."""
     print(f"Couldn't find your .ssh directory or file [{dot_ssh_directory}]")
@@ -181,7 +52,10 @@ def compare_versions(version1: str, version2: str) -> int:
         return (a > b) - (a < b)
 
     def normalize(v: str) -> List[int]:
-        return [int(x) for x in re.sub(r"(\.0+)*$", "", re.sub(r"[^0-9.]", "", v)).split(".")]
+        return [
+            int(x)
+            for x in re.sub(r"(\.0+)*$", "", re.sub(r"[^0-9.]", "", v)).split(".")
+        ]
 
     return cmp(normalize(version1), normalize(version2))
 
@@ -227,7 +101,9 @@ def check_for_software(
     If there is a problem, either print the message string or call the fix_function to fix things.
     """
 
-    print(f"... Checking that the {program} version is greater than or equal to: {minimum_version}")
+    print(
+        f"... Checking that the {program} version is greater than or equal to: {minimum_version}"
+    )
     current_version = ""
     old_version = False
     no_version = False
@@ -266,7 +142,9 @@ def deal_with_software_apt(program: str, current_version: str) -> None:
     else:
         print()
         print()
-        print(f"Your version of {program} [{current_version}] is too old, try upgrading with:")
+        print(
+            f"Your version of {program} [{current_version}] is too old, try upgrading with:"
+        )
         print("sudo apt-get update && sudo apt-get upgrade")
         exit(100)
 
@@ -292,11 +170,15 @@ def deal_with_software_state_tool(program: str, current_version: str) -> None:
                 check=True,
             )
             subprocess.run(["chmod", "a+x", "/tmp/state_install.sh"], check=True)
-            subprocess.run(["sed", "-i", "s/\r//g", "/tmp/state_install.sh"], check=True)
+            subprocess.run(
+                ["sed", "-i", "s/\r//g", "/tmp/state_install.sh"], check=True
+            )
             subprocess.run(["/tmp/state_install.sh", "-n"], check=True)
         except subprocess.CalledProcessError:
             install_state_command = "sh <(curl -q https://s3.ca-central-1.amazonaws.com/cli-update/update/state/install.sh)"
-            print("Failed to run command to install state, you may need to run this manually:")
+            print(
+                "Failed to run command to install state, you may need to run this manually:"
+            )
             print(install_state_command)
             exit(201)
         print("... State tool installed")
@@ -600,6 +482,137 @@ def write_Ultisnips_config_file(home_directory: Path, configuration: Any) -> Non
 
     with open(file_path, "w") as file:
         file.write(contents)
+
+
+def main() -> None:
+    """Run through all the steps to setup the development environment."""
+    print("Initial setup of docker image for ActiveState development")
+
+    print(
+        "You need to be on the 'dev' VPN to do your work, the office VPN will be slower and give you problems..."
+    )
+
+    print("Doing initial checks")
+
+    if not args.offline:
+        print("... Checking for VPN connectivity")
+        if not are_we_on_activestate_vpn():
+            print(
+                "You need to connect to the ActiveState VPN before running this script, preferably the Dev VPN because it will work better"
+            )
+            exit(6)
+        if are_we_on_activestate_office_vpn():
+            print(
+                "WARNING: You are connected to the ActiveState Office VPN, it would be bettter to use the Dev VPN"
+            )
+
+    print("... Checking for home directory")
+    home_directory = Path.home()
+    checkForDirectory(
+        home_directory,
+        f"Couldn't find your home directory [{home_directory}], something is probably very wrong with the script, please contact {script_author}",
+        1,
+    )
+
+    print("... Checking for .ssh directory")
+    dot_ssh_directory = Path(os.path.join(home_directory, ".ssh"))
+    checkForDirectory(dot_ssh_directory, printSSHCreationMessage, 2)
+
+    dot_ssh_pub_file = Path(os.path.join(home_directory, ".ssh", "id_ed25519.pub"))
+    print("... Checking for id_ed25519.pub file")
+    checkForFile(dot_ssh_pub_file, printSSHCreationMessage, 3)
+
+    print("Seems all the inital checks passed")
+    print()
+
+    print("Ensure required directories exist and are populated")
+    # ensure_directory_exists(
+    # Path(os.path.join(home_directory, "Documents", "ActiveState", "DockerMount"))
+    # )
+    # ensure_directory_exists(
+    # Path(os.path.join(home_directory, "Documents", "ActiveState", "CommandScriptLogs"))
+    # )
+    # ensure_directory_exists(
+    # Path(os.path.join(home_directory, "Documents", "ActiveState", "ConfigurationBackups"))
+    # )
+    ensure_directory_exists(Path(os.path.join(home_directory, ".local", "bin")))
+    # ensure_directory_exists(Path(os.path.join(home_directory, "camel")))
+    # ensure_directory_exists(Path(os.path.join(home_directory, "TheHomeRepot")))
+    ensure_directory_exists(Path(os.path.join(home_directory, ".aws")))
+    ensure_directory_exists(Path(os.path.join(home_directory, ".config")))
+    print("Required directories exist")
+    print()
+
+    print("Check environment variables")
+    print("... Checking PATH")
+    if "PATH" in os.environ:
+        print("...... PATH environment variable exists")
+        path_value = os.environ.get("PATH")
+        should_be_in_path = os.path.join(home_directory, ".local", "bin")
+        if path_value is not None and should_be_in_path in path_value:
+            print(f"...... PATH seems to contain {should_be_in_path}, good...")
+        else:
+            print(
+                f"PATH needs to contain {should_be_in_path} so that state tool can install somewhere"
+            )
+            print("Try running the following:")
+            print(f"echo 'export PATH={should_be_in_path}:$PATH' >> ~/.bashrc")
+            print("source ~/.bashrc")
+            exit(5)
+
+    print("Seems environment variables are good")
+    print()
+
+    print("Reading configuration file: ", configuration_file)
+    with open(configuration_file) as f:
+        data = yaml.load(f, Loader=yaml.FullLoader)
+    print()
+    print("Creating files if they don't exist")
+    write_gitconfig_file(home_directory, data)
+    write_aws_config_file(home_directory, data)
+    # write_aws_credentials_file(home_directory, data)
+    write_dotconfig_hub_file(home_directory, data)
+    write_dotcamel_file(home_directory, data)
+    write_pr_user_file(home_directory, data)
+    write_pivotaltrackerc_file(home_directory, data)
+    write_shellchoice_file(home_directory, data)
+    write_editorchoice_file(home_directory, data)
+    write_Ultisnips_config_file(home_directory, data)
+    print("Configuration files now handled")
+    print()
+
+    print("Check that required software is installed")
+    # check_for_software("curl", "7.68.0", r"^curl (\S*).*", deal_with_software_apt)
+
+    # check_for_software("git", "2.24.3", r"^git version (\S*)", deal_with_software_apt)
+    # check_for_software("git-lfs", "2.9.2", r"^git-lfs/(\S*)", deal_with_software_apt)
+    # check_for_software("pipenv", "11.9.0", r"^pipenv, version (\S*)", deal_with_software_apt)
+    # check_for_software("java", "11.0.0", r"openjdk (\S*)", deal_with_software_apt)
+
+    # check_for_software("stow", "2.3.1", r"^stow.*version (\S*)", deal_with_software_state_tool)
+    # print("Seems that required software is installed")
+    # print()
+
+    # check_for_software("state", "0.13.31", r"^Version (\S*)", deal_with_software_state_tool)
+    # print("Seems that required software is installed")
+    # print()
+
+    print("Ensuring code checked out")
+    destination_directory = Path(os.path.join(home_directory, "ActiveState", "camel"))
+    link_destination = Path(os.path.join(home_directory, "camel"))
+    ensure_repository_checked_out(
+        destination_directory, "git@github.com:ActiveState/camel.git"
+    )
+    ensure_link_exists(destination_directory, link_destination)
+
+    destination_directory = Path(
+        os.path.join(home_directory, "ActiveState", "TheHomeRepot")
+    )
+    link_destination = Path(os.path.join(home_directory, "TheHomeRepot"))
+    ensure_repository_checked_out(
+        destination_directory, "git@github.com:ActiveState/TheHomeRepot.git"
+    )
+    ensure_link_exists(destination_directory, link_destination)
 
 
 if __name__ == "__main__":
