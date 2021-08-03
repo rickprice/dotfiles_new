@@ -69,17 +69,17 @@ def main() -> None:
 
     print("Ensure required directories exist and are populated")
     ensure_directory_exists(
-        Path(os.path.join(home_directory, "Documents", "ActiveState", "DockerMount"))
-    )
-    ensure_directory_exists(
-        Path(os.path.join(home_directory, "Documents", "ActiveState", "CommandScriptLogs"))
-    )
-    ensure_directory_exists(
-        Path(os.path.join(home_directory, "Documents", "ActiveState", "ConfigurationBackups"))
-    )
+        # Path(os.path.join(home_directory, "Documents", "ActiveState", "DockerMount"))
+    # )
+    # ensure_directory_exists(
+        # Path(os.path.join(home_directory, "Documents", "ActiveState", "CommandScriptLogs"))
+    # )
+    # ensure_directory_exists(
+        # Path(os.path.join(home_directory, "Documents", "ActiveState", "ConfigurationBackups"))
+    # )
     ensure_directory_exists(Path(os.path.join(home_directory, ".local", "bin")))
-    ensure_directory_exists(Path(os.path.join(home_directory, "camel")))
-    ensure_directory_exists(Path(os.path.join(home_directory, "TheHomeRepot")))
+    # ensure_directory_exists(Path(os.path.join(home_directory, "camel")))
+    # ensure_directory_exists(Path(os.path.join(home_directory, "TheHomeRepot")))
     ensure_directory_exists(Path(os.path.join(home_directory, ".aws")))
     ensure_directory_exists(Path(os.path.join(home_directory, ".config")))
     print("Required directories exist")
