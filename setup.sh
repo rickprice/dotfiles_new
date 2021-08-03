@@ -23,4 +23,4 @@ source_files_in() {
 
 source_files_in $SCRIPT_BASE/setup.d
 
-return 0
+exit 0
