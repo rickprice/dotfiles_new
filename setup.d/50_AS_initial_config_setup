@@ -20,10 +20,10 @@ if [ ! -f $SENTINEL_AS_SETUP_SCRIPT ] ; then
                     echo "\"$FILE\" selected." ;;
              1 )
                  echo "No file selected." ;
-                 exit( 1 ) ;;
+                 exit 1  ;;
             -1 )
                 echo "An unexpected error has occurred." ;
-                exit( -1 ) ;;
+                exit -1  ;;
     esac
 
     python $SCRIPT_BASE/initial_setup.py $FILE
