@@ -30,7 +30,7 @@ yay --noconfirm -S fd
 yay --noconfirm -S bat
 
 # Better cd
-yay --noconfirm -S zoxide
+yay --noconfirm -S zoxide-git
 
 chsh -s $(which fish)
 
