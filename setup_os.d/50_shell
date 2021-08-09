@@ -20,5 +20,18 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
 # install the fish shell
 yay --noconfirm -S fish
+# Firsher plugin manager
+yay --noconfirm -S fisher-git
+
+# fzf plugin
+yay --noconfirm -S fzf-git
+# yay --noconfirm -S fzf-extras-git
+yay --noconfirm -S fd
+yay --noconfirm -S bat
+
+# Better cd
+yay --noconfirm -S zoxide
 
 chsh -s $(which fish)
+
+fisher install PatrickF1/fzf.fish
