@@ -15,6 +15,10 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 # else
 #   sh -c "$(wget -O- https://raw.githubusercontent.com/romkatv/zsh4humans/v4/install)"
 # fi
+#
+# chsh -s $(which zsh)
 
-chsh -s $(which zsh)
+# install the fish shell
+yay --noconfirm -S fish
 
+chsh -s $(which fish)
