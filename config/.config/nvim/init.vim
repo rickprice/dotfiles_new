@@ -211,6 +211,9 @@ Plug 'kshenoy/vim-signature'
 " For handling root files
 Plug 'lambdalisue/suda.vim'
 
+" Lua handling
+" Plug 'euclidianAce/BetterLua.vim'
+
 "UltiSnips engine
 if g:has_python3 || g:is_nvim5
     " Track the engine.
@@ -412,7 +415,7 @@ let g:gist_token=$GIST_TOKEN
 " CoC Setup
 if g:use_coc
     " let g:coc_global_extensions = ['coc-pyright', 'coc-yaml', 'coc-json', 'coc-git', 'coc-docker', 'coc-markdownlint', 'coc-perl', 'coc-sh', 'coc-fzf-preview', 'coc-spell-checker','coc-tsserver', 'coc-rls', 'coc-ultisnips']
-    let g:coc_global_extensions = ['coc-pyright', 'coc-yaml', 'coc-json', 'coc-docker', 'coc-markdownlint', 'coc-perl', 'coc-sh', 'coc-fzf-preview', 'coc-spell-checker','coc-tsserver', 'coc-rls', 'coc-ultisnips']
+    let g:coc_global_extensions = ['coc-pyright', 'coc-yaml', 'coc-json', 'coc-docker', 'coc-markdownlint', 'coc-perl', 'coc-sh', 'coc-fzf-preview', 'coc-spell-checker','coc-tsserver', 'coc-rls', 'coc-ultisnips','coc-lua']
 
     " TextEdit might fail if hidden is not set.
     set hidden
