@@ -12,5 +12,5 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 yay --noconfirm -S reflector
 
 ## Setup mirrors better
-# sudo reflector --age 6 --latest 20 --fastest 20 --threads 20 --sort rate --protocol https --save /etc/pacman.d/mirrorlist
-sudo reflector --country Canada,UnitedStates --age 24 --protocol https --save /etc/pacman.d/mirrorlist && true
+sudo reflector --age 24 --latest 20 --fastest 20 --threads 20 --sort rate --protocol https --save /etc/pacman.d/mirrorlist && true
+# sudo reflector --country Canada,UnitedStates --age 24 --protocol https --save /etc/pacman.d/mirrorlist && true
