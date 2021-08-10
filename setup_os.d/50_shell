@@ -36,3 +36,4 @@ chsh -s $(which fish)
 
 fisher install PatrickF1/fzf.fish
 fisher install danhper/fish-ssh-agent
+fisher install rickprice/aws_mfa
