@@ -31,7 +31,7 @@ function plat() {
     fi
 }
 
-function PR-DEPLOY() {
+function PR_DEPLOY() {
        USER=$AS_USER pr-deploy
 }
 
@@ -43,12 +43,12 @@ function PR() {
 alias prod='plat prod'
 alias staging='plat staging'
 
-function review-list(){
+function review_list(){
        LIST=$@
        inventory-review --src-env $AS_PLATFORM --target-env prod $(for i in $LIST; do IID=$(ingredient search -en $i|grep $i|awk '{print $4}') 2>/dev/null; echo " --ingredient $IID "; done)
 }
 
-function review-prep(){
+function review_prep(){
        LIST=$@
        echo $(for i in $LIST; do IID=$(ingredient search -en $i|grep $i|awk '{print $4}') 2>/dev/null; echo " --ingredient $IID "; done)
        echo -e "\ninventory-review --src-env $AS_PLATFORM --target-env prod\n"
@@ -70,7 +70,7 @@ function camel_report(){
        echo "$LOG" | sed -e 's/ \((.*)\)//g'
 }
 
-function tidy-add(){
+function tidy_add(){
        FILE=$@;
        for i in ${FILE}; do
           tidyall $i;
