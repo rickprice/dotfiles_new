@@ -5,7 +5,7 @@ source ~/.local/bin/set_as_config.sh
 function plat -a platform
     if test -n "$platform"
         echo "switching to $platform"
-        set -x AS_PLATFORM $platform
+        set -gx AS_PLATFORM $platform
     else
         if test -n "$AS_PLATFORM"
             echo "$AS_PLATFORM"
@@ -21,7 +21,7 @@ end
 
 function PR -a platform
     echo "Creating login for $platform"
-    set -x AS_PLATFORM $platform
+    plat $platform
     echo -e "$AS_USER\n" | apikey new;
 end
 
