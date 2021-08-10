@@ -14,3 +14,4 @@ stow --dotfiles local
 stow --dotfiles tmux
 stow --dotfiles mutt
 stow --dotfiles weechat
+stow --dotfiles ssh
