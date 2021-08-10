@@ -35,3 +35,4 @@ yay --noconfirm -S zoxide-git
 chsh -s $(which fish)
 
 fisher install PatrickF1/fzf.fish
+fisher install danhper/fish-ssh-agent
