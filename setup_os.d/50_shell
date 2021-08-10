@@ -32,7 +32,8 @@ yay --noconfirm -S bat
 # Better cd
 yay --noconfirm -S zoxide-git
 
-chsh -s $(which fish)
+# Default shell is set as fish in initial machine build script
+# chsh -s $(which fish)
 
 fisher install PatrickF1/fzf.fish
 fisher install danhper/fish-ssh-agent
