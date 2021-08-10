@@ -38,3 +38,4 @@ yay --noconfirm -S zoxide-git
 fisher install PatrickF1/fzf.fish
 fisher install danhper/fish-ssh-agent
 fisher install rickprice/aws_mfa
+fisher install rickprice/HomeRepotTools_fish
