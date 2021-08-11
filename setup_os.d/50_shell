@@ -35,7 +35,7 @@ yay --noconfirm -S zoxide-git
 # Default shell is set as fish in initial machine build script
 # chsh -s $(which fish)
 
-fisher install PatrickF1/fzf.fish
-fisher install danhper/fish-ssh-agent
-fisher install rickprice/aws_mfa
-fisher install rickprice/HomeRepotTools_fish
+fish -c "fisher install PatrickF1/fzf.fish"
+fish -c "fisher install danhper/fish-ssh-agent"
+fish -c "fisher install rickprice/aws_mfa"
+fish -c "fisher install rickprice/HomeRepotTools_fish"
