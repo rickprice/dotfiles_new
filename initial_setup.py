@@ -52,10 +52,7 @@ def compare_versions(version1: str, version2: str) -> int:
         return (a > b) - (a < b)
 
     def normalize(v: str) -> List[int]:
-        return [
-            int(x)
-            for x in re.sub(r"(\.0+)*$", "", re.sub(r"[^0-9.]", "", v)).split(".")
-        ]
+        return [int(x) for x in re.sub(r"(\.0+)*$", "", re.sub(r"[^0-9.]", "", v)).split(".")]
 
     return cmp(normalize(version1), normalize(version2))
 
@@ -101,9 +98,7 @@ def check_for_software(
     If there is a problem, either print the message string or call the fix_function to fix things.
     """
 
-    print(
-        f"... Checking that the {program} version is greater than or equal to: {minimum_version}"
-    )
+    print(f"... Checking that the {program} version is greater than or equal to: {minimum_version}")
     current_version = ""
     old_version = False
     no_version = False
@@ -142,9 +137,7 @@ def deal_with_software_apt(program: str, current_version: str) -> None:
     else:
         print()
         print()
-        print(
-            f"Your version of {program} [{current_version}] is too old, try upgrading with:"
-        )
+        print(f"Your version of {program} [{current_version}] is too old, try upgrading with:")
         print("sudo apt-get update && sudo apt-get upgrade")
         exit(100)
 
@@ -170,15 +163,11 @@ def deal_with_software_state_tool(program: str, current_version: str) -> None:
                 check=True,
             )
             subprocess.run(["chmod", "a+x", "/tmp/state_install.sh"], check=True)
-            subprocess.run(
-                ["sed", "-i", "s/\r//g", "/tmp/state_install.sh"], check=True
-            )
+            subprocess.run(["sed", "-i", "s/\r//g", "/tmp/state_install.sh"], check=True)
             subprocess.run(["/tmp/state_install.sh", "-n"], check=True)
         except subprocess.CalledProcessError:
             install_state_command = "sh <(curl -q https://s3.ca-central-1.amazonaws.com/cli-update/update/state/install.sh)"
-            print(
-                "Failed to run command to install state, you may need to run this manually:"
-            )
+            print("Failed to run command to install state, you may need to run this manually:")
             print(install_state_command)
             exit(201)
         print("... State tool installed")
@@ -268,6 +257,7 @@ def write_gitconfig_file(home_directory: Path, configuration: Any) -> None:
     name = configuration["user"]["fullname"]
     pivotal_user = configuration["pivotal"]["user"]
     pivotal_token = configuration["pivotal"]["token"]
+    hub_user = configuration["hub"]["user"]
 
     contents = f"""[filter "lfs"]
     clean = git-lfs clean -- %f
@@ -283,7 +273,7 @@ def write_gitconfig_file(home_directory: Path, configuration: Any) -> None:
 [hub]
     host = github.com
 [pull]
-    rebase = false
+    rebase = true
 [merge]
     tool = vimdiff
     conflictsstyle = diff3
@@ -291,6 +281,10 @@ def write_gitconfig_file(home_directory: Path, configuration: Any) -> None:
     prompt = false
 [init]
     defaultBranch = master
+[github]
+	user = {hub_user}
+[rebase]
+	autoStash = true
 """
 
     with open(file_path, "w") as file:
@@ -598,13 +592,9 @@ def main() -> None:
     # print()
 
     print("Ensuring code checked out")
-    destination_directory = Path(
-        os.path.join(home_directory, "Documents", "ActiveState", "camel")
-    )
+    destination_directory = Path(os.path.join(home_directory, "Documents", "ActiveState", "camel"))
     link_destination = Path(os.path.join(home_directory, "camel"))
-    ensure_repository_checked_out(
-        destination_directory, "git@github.com:ActiveState/camel.git"
-    )
+    ensure_repository_checked_out(destination_directory, "git@github.com:ActiveState/camel.git")
     ensure_link_exists(destination_directory, link_destination)
 
     destination_directory = Path(
