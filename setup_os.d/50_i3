@@ -25,7 +25,7 @@ yay --noconfirm -S alsa-utils
 yay --noconfirm -S i3-scrot
 yay --noconfirm -S xorg-xkill
 yay --noconfirm -S network-manager-applet
-yay --noconfirm -R i3-wm i3status
+yay --noconfirm -R i3-wm i3status || true
 yay --noconfirm -S i3-git i3status-git
 yay --noconfirm -S dunst
 yay --noconfirm -S polkit-gnome
