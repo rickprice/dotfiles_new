@@ -76,6 +76,24 @@ endif
 "call plug#end()
 " +++++++++++++++++++++++++++++++ End of Vim-Plug auto-download +++++++++++++++++++++++++++++++
 
+" ------ Code for AS Platform dislpay Start in Airline Status Line
+function GetASPlatform()
+    return "ASPlat: " . $AS_PLATFORM
+endfunction
+
+function! AirlineInit()
+    call airline#parts#define_function('ASPlatform', 'GetASPlatform')
+    call airline#parts#define_condition('ASPlatform', 'GetASPlatform() =~ "ASPlat: "')
+
+    let g:airline_section_y = airline#section#create_right(['ffenc','ASPlatform'])
+endfunction
+
+augroup airline_init
+  autocmd! *
+  autocmd User AirlineAfterInit call AirlineInit()
+augroup END
+" ------ Code for AS Platform dislpay End
+
 if g:use_coc
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 else
