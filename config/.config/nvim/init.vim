@@ -78,14 +78,30 @@ endif
 
 " ------ Code for AS Platform dislpay Start in Airline Status Line
 function GetASPlatform()
-    return "ASPlat: " . $AS_PLATFORM
+    return $AS_PLATFORM
+endfunction
+
+function IsASPlatformProd()
+    return GetASPlatform() ==# "prod"
+endfunction
+
+function IsASPlatformDefined()
+    return strlen(GetASPlatform())
+endfunction
+
+function GetASPlatformFormatted()
+    return "PR [" . GetASPlatform() . "]"
 endfunction
 
 function! AirlineInit()
-    call airline#parts#define_function('ASPlatform', 'GetASPlatform')
-    call airline#parts#define_condition('ASPlatform', 'GetASPlatform() =~ "ASPlat: "')
+    call airline#parts#define_function('ASPlatformNormal', 'GetASPlatformFormatted')
+    call airline#parts#define_condition('ASPlatformNormal', 'IsASPlatformDefined() && IsASPlatformProd() == 0')
 
-    let g:airline_section_y = airline#section#create_right(['ffenc','ASPlatform'])
+    call airline#parts#define_function('ASPlatformRed', 'GetASPlatformFormatted')
+    call airline#parts#define_condition('ASPlatformRed', 'IsASPlatformDefined() && IsASPlatformProd() == 1')
+    call airline#parts#define_accent('ASPlatformRed', 'red')
+    
+    let g:airline_section_y = airline#section#create_right(['ffenc','ASPlatformRed','ASPlatformNormal'])
 endfunction
 
 augroup airline_init
@@ -843,4 +859,4 @@ augroup END
 " augroup highlight_yank
 "     autocmd!
 "     autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank()
-" augroup END
+
