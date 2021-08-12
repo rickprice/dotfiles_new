@@ -9,6 +9,7 @@ trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
 trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
 echo "Need to copy the .ssh and .gnupg directories over from an existing machine"
+echo "You may need to run <udiskie &> and then <pcmanfm &> to get the files across"
 echo
 echo "After copying the directory, and not before..."
 
