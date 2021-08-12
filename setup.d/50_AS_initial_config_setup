@@ -28,7 +28,7 @@ SENTINEL_AS_SETUP_SCRIPT=~/.local/bin/set_as_config.sh
 
 
 echo "You need to start up the VPN software now"
-echo "For instance:
+echo "For instance:"
 echo "sudo cp ~/WireGuard/*.conf /etc/WireGaurd"
 echo "sudo wg-quick up wg0_rickp"
 echo
