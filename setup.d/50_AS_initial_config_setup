@@ -26,6 +26,23 @@ SENTINEL_AS_SETUP_SCRIPT=~/.local/bin/set_as_config.sh
                 exit -1  ;;
     esac
 
+
+echo "You need to start up the VPN software now"
+echo "For instance:
+echo "sudo cp ~/WireGuard/*.conf /etc/WireGaurd"
+echo "sudo wg-quick up wg0_rickp"
+echo
+echo "Press any key to continue"
+while [ true ] ; do
+# read -t 3 -n 1
+read -n 1
+if [ $? = 0 ] ; then
+break ;
+else
+echo "waiting for the keypress"
+fi
+done
+
     python $SCRIPT_BASE/initial_setup.py $FILE
 
 # fi
