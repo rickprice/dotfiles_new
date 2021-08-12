@@ -11,6 +11,6 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 PASSWORD_STORE_LOCATION=~/.password-store
 if [ ! -d $PASSWORD_STORE_LOCATION ] ; then
 
-    git clone tgit@github.com:rickprice/password.git $PASSWORD_STORE_LOCATION
+    git clone git@github.com:rickprice/password.git $PASSWORD_STORE_LOCATION
 
 fi
