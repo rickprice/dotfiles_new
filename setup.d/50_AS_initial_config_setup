@@ -13,6 +13,9 @@ SENTINEL_AS_SETUP_SCRIPT=~/.local/bin/set_as_config.sh
 
 export PATH=$PATH:~/.local/bin
 
+# Needed so we can configure ultisnips...
+mkdir -p ~/.config/nvim
+
 # if [ ! -f $SENTINEL_AS_SETUP_SCRIPT ] ; then
 
     FILE=`zenity --file-selection --title="Select ActiveState developer configuration file"`
