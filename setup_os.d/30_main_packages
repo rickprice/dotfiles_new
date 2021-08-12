@@ -50,9 +50,8 @@ sudo pacman --noconfirm -S xcape
 ## Keypass
 yay --noconfirm -S keepassxc
 
-## Glogg
-# yay --noconfirm -S glogg
-# xdg-mime default glogg.desktop text/x-log
+## Klogg
+yay --noconfirm -S klogg
 
 ## Git-LFS
 yay --noconfirm -S git-lfs
