@@ -78,7 +78,7 @@ endif
 
 " ------ Code for AS Platform dislpay Start in Airline Status Line
 function GetASPlatform()
-    return $AS_PLATFORM
+    return g:AS_PLATFORM
 endfunction
 
 function IsASPlatformProd()
@@ -94,6 +94,7 @@ function GetASPlatformFormatted()
 endfunction
 
 function! AirlineInit()
+    let g:AS_PLATFORM=$AS_PLATFORM
     call airline#parts#define_function('ASPlatformNormal', 'GetASPlatformFormatted')
     call airline#parts#define_condition('ASPlatformNormal', 'IsASPlatformDefined() && IsASPlatformProd() == 0')
 
