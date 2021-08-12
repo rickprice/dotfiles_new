@@ -76,7 +76,7 @@ endif
 "call plug#end()
 " +++++++++++++++++++++++++++++++ End of Vim-Plug auto-download +++++++++++++++++++++++++++++++
 
-" ------ Code for AS Platform dislpay Start in Airline Status Line
+" +++++++++++++++++++++++++++++++ Code for AS Platform dislpay Start in Airline Status Line +++++++++++++++++++++++++++++++
 function GetASPlatform()
     return g:AS_PLATFORM
 endfunction
@@ -95,21 +95,24 @@ endfunction
 
 function! AirlineInit()
     let g:AS_PLATFORM=$AS_PLATFORM
-    call airline#parts#define_function('ASPlatformNormal', 'GetASPlatformFormatted')
-    call airline#parts#define_condition('ASPlatformNormal', 'IsASPlatformDefined() && IsASPlatformProd() == 0')
 
-    call airline#parts#define_function('ASPlatformRed', 'GetASPlatformFormatted')
-    call airline#parts#define_condition('ASPlatformRed', 'IsASPlatformDefined() && IsASPlatformProd() == 1')
-    call airline#parts#define_accent('ASPlatformRed', 'red')
+    if IsASPlatformDefined()
+        call airline#parts#define_function('ASPlatform', 'GetASPlatformFormatted')
+
+        if IsASPlatformProd()
+            call airline#parts#define_accent('ASPlatform', 'red')
+        endif
     
-    let g:airline_section_y = airline#section#create_right(['ffenc','ASPlatformRed','ASPlatformNormal'])
+        let g:airline_section_y = airline#section#create_right(['ffenc','ASPlatform'])
+    endif
+
 endfunction
 
 augroup airline_init
   autocmd! *
   autocmd User AirlineAfterInit call AirlineInit()
 augroup END
-" ------ Code for AS Platform dislpay End
+" +++++++++++++++++++++++++++++++ Code for AS Platform dislpay End in Airline Status Line +++++++++++++++++++++++++++++++
 
 if g:use_coc
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
