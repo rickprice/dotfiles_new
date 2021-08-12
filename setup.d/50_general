@@ -11,7 +11,7 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 # Need to remove any existing .config directory or stow won't work
 echo "Moving .config to .config.backup to get it out of the way..."
 rm -rf ~/.config.backup
-mv .config .config.backup || true
+mv ~/.config ~/.config.backup || true
 
 rm -rf ~/.config/mimeapps.list
 stow --dotfiles config
